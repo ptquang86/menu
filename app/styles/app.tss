@@ -30,3 +30,5 @@
 		// ".txt-textarea": { height: '100%' }
 		// ".txt-textarea[platform=ios]": { left: -4, right: -4 }
 		// ".txt-textarea[platform=android]": { left: 0, right: 0, hintTextColor: '#777' }
+		// ".txt-next": { returnKeyType: Titanium.UI.RETURNKEY_NEXT }
+		// ".txt-done": { returnKeyType: Titanium.UI.RETURNKEY_JOIN }
