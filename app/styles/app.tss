@@ -27,7 +27,7 @@
 		// ".txt-textfield": { height: 52 }
 		// ".txt-textfield[platform=ios]": { left: 0, right: 0, paddingLeft: 0, paddingRight: 0, clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS }
 		// ".txt-textfield[platform=android]": { left: -4, right: -4, hintTextColor: '#777' }
-		// ".txt-textarea": { height: '100%' }
+		// ".txt-textarea": { height: '100%', suppressReturn: false }
 		// ".txt-textarea[platform=ios]": { left: -4, right: -4 }
 		// ".txt-textarea[platform=android]": { left: 0, right: 0, hintTextColor: '#777' }
 		// ".txt-next": { returnKeyType: Titanium.UI.RETURNKEY_NEXT }
