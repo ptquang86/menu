@@ -8,9 +8,7 @@
 
 	// "MenuItem[platform=android]": { showAsAction: Titanium.Android.SHOW_AS_ACTION_ALWAYS }
 
-	// ".ai": { height: Titanium.UI.SIZE, top: 20, bottom: 20 }
-	// ".ai[platform=ios]": { style: Titanium.UI.iPhone.ActivityIndicatorStyle.DARK }
-	// ".ai[platform=android]": { style: Titanium.UI.ActivityIndicatorStyle.DARK }
+	// ".ai": { /* height: Titanium.UI.SIZE, top: 20, bottom: 20, */ style: Titanium.UI.ActivityIndicatorStyle.DARK }
 
 	// ".lv": { backgroundColor: 'transparent', separatorColor: '#d6d6d6', separatorInsets: { left: 0, right: 0 } }
 	// // ".lv-noseparator": { separatorColor: 'transparent' }
