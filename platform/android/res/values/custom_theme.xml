@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="materialTheme" parent="@style/Theme.AppCompat">
-        <item name="colorPrimaryDark">#172E63</item>
+        <item name="colorPrimaryDark">#2B54B6</item>
         <item name="colorPrimary">#3c6ad2</item>
     </style>
 </resources>
