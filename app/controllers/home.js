@@ -19,15 +19,15 @@ exports.init = function(cache) {
 };
 
 exports.cleanup = function(e) {
-	menuCleanup();
+	menuCleanup(e);
 };
 
 exports.reload = function(e) {
-	menuReload();
+	menuReload(e);
 };
 
-exports.unload = function() {
-	menuUnload();
+exports.unload = function(e) {
+	menuUnload(e);
 };
 
 // exports.orientationchange = function(e) {

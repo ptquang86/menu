@@ -1,6 +1,6 @@
 var Alloy = require('alloy');
 
-// hasAI: true, hasNavBar, hasWebview
+// hasAI: true, hasWebview
 
 function Plugins(config) {
 	var _return = {
@@ -26,14 +26,6 @@ function Plugins(config) {
 	
 	function windowShow(params, e) {
 		var win = params.controller.getView();
-		if (win.hasNavBar == 'false') {
-			if (OS_IOS) {
-				win.navBarHidden = true;
-			} else {
-				win.addEventListener('open', function(e) { e.source.activity.actionBar.hide(); });
-			}
-		}
-		
 		config.ai 		&& loadAI(params, win);
 		config.keyboard && loadKeyboard(params, win);
 		config.toast    && loadToast(params, win);
@@ -44,7 +36,7 @@ function Plugins(config) {
 			params._ai.unload();
 	  		params._ai = null;
 		}
-		config.keyboard && (params._txt = null);
+		config.keyboard && !OS_ANDROID && (params._txt = null);
 	}
 	
 	/* =============================================================================
@@ -52,7 +44,7 @@ function Plugins(config) {
    ========================================================================== */
 	  
 	function loadAI(params, win) {
-		var ai = Alloy.createWidget('com.imobicloud.ai', { visible: win.hasAI != 'false' });
+		var ai = Alloy.createWidget('com.imobicloud.ai', { visible: win.hasAI + '' != 'false' });
 	  	params._ai = ai;
 	  	win.add( ai.getView() );
 	}
@@ -86,16 +78,19 @@ function Plugins(config) {
 	
 	function loadKeyboard(params, win) {
 	  	// attach hidden textfield for hiding keyboard
-		
-		var txt = Ti.UI.createTextField({ visible: false });
-		// OS_ANDROID && (txt.softKeyboardOnFocus = Ti.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS);
-		params._txt = txt;
-		win.add(txt);
+	  	
+		if (!OS_ANDROID) {
+			var txt = Ti.UI.createTextField({ visible: false });
+			params._txt = txt;
+			win.add(txt);
+		}
 		
 		// hide keyboard on tap
 		
-		if (win.hasWebview != 'true') {
-			win.addEventListener('singletap', function(e) {
+		if (win.hasWebview + '' != 'true') {
+			// click: window is click-able, list-view is not click-able
+			// singletap: window is not click-able, list-view is click-able
+			win.addEventListener('click', function(e) {
 				if ( ['Ti.UI.TextField', 'Ti.UI.TextArea', 'Ti.UI.SearchBar', 'Ti.UI.Android.SearchView'].indexOf( e.source.apiName ) == -1 ) {
 					hideKeyboard();
 				}
@@ -104,9 +99,9 @@ function Plugins(config) {
 	}
 	  
 	function hideKeyboard() {
-		//TODO: try this Ti.UI.Android.hideSoftKeyboard();
-		
-		if (OS_ANDROID || Ti.App.keyboardVisible) { // Ti.App.keyboardVisible for iOS only
+		if (OS_ANDROID) {
+			Ti.UI.Android.hideSoftKeyboard();
+		} else if (Ti.App.keyboardVisible) {
 			var current = Alloy.Globals.WinManager.getCache(-1);
 		  	if (current == null) {
 				current = Alloy.Globals.Tabgroup.getCache(-1, -1);
@@ -123,7 +118,7 @@ function Plugins(config) {
 	//
 	
 	function loadToast(params, win) {
-	  	var toast = Alloy.createWidget('com.imobicloud.toast', { hasNavBar: win.hasNavBar });
+	  	var toast = Alloy.createWidget('com.imobicloud.toast', { hasNavBar: !win.navBarHidden + '' });
 	  	params._toast = toast;
 	  	win.add( toast.getView() );
 	}
