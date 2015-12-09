@@ -28,5 +28,7 @@
 		// ".txt-textarea": { height: '100%', suppressReturn: false }
 		// ".txt-textarea[platform=ios]": { left: -4, right: -4 }
 		// ".txt-textarea[platform=android]": { left: 0, right: 0, hintTextColor: '#777' }
-		// ".txt-next": { returnKeyType: Titanium.UI.RETURNKEY_NEXT }
-		// ".txt-done": { returnKeyType: Titanium.UI.RETURNKEY_JOIN }
+		// ".txt-textfield-next": { returnKeyType: Titanium.UI.RETURNKEY_NEXT }
+		// ".txt-textfield-done": { returnKeyType: Titanium.UI.RETURNKEY_JOIN }
+		// ".txt-textfield-number": { keyboardType: Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION }
+		// ".txt-textfield-password": { passwordMask: true }
