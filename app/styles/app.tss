@@ -30,5 +30,6 @@
 		// ".txt-textarea[platform=android]": { left: 0, right: 0, hintTextColor: '#777' }
 		// ".txt-textfield-next": { returnKeyType: Titanium.UI.RETURNKEY_NEXT }
 		// ".txt-textfield-done": { returnKeyType: Titanium.UI.RETURNKEY_JOIN }
+		// ".txt-textfield-email": { keyboardType: Titanium.UI.KEYBOARD_EMAIL }
 		// ".txt-textfield-number": { keyboardType: Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION }
 		// ".txt-textfield-password": { passwordMask: true }
