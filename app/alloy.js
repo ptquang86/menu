@@ -5,14 +5,18 @@
 		platformWidth = displayCaps.platformWidth,
 		platformHeight = displayCaps.platformHeight;
 	
-	Ti.API.info('ScreenSize: ' + JSON.stringify( [platformWidth, platformHeight] ));
+	Ti.API.info('ScreenSize 1: ' + JSON.stringify( [platformWidth, platformHeight] ));
 	
 	if (OS_ANDROID) {
 		var measurement = require('alloy/measurement');
 		platformWidth = Math.floor(measurement.pxToDP(platformWidth));
 		platformHeight = Math.floor(measurement.pxToDP(platformHeight));
-		Ti.API.info('ScreenSize: ' + JSON.stringify( [platformWidth, platformHeight] ));
-		Ti.API.info('if ( ScreenSize == ScreenSize scaled ) { Delete the [build] + [Resources] folders and build again. }'); 
+		
+		Ti.API.info('ScreenSize 2: ' + JSON.stringify( [platformWidth, platformHeight] ));
+		
+		if (platformWidth == displayCaps.platformWidth && platformHeight == displayCaps.platformHeight) {
+			Ti.API.error('alloy.js: Delete the [build] + [Resources] folders then build again.');
+		}
 	}
 	
   	Alloy.Globals.UI = {
