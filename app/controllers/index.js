@@ -1,7 +1,7 @@
 init();
 function init() {
-	var oPlugins = require('managers/plugins'),
-		plugins  = new oPlugins({ ai: false, keyboard: false, toast: false });
+	// var oPlugins = require('managers/plugins'),
+		// plugins  = new oPlugins({ ai: false, keyboard: false, toast: false });
 	
 	var oWindowManager = require('managers/window'),
 		winManager = new oWindowManager();
