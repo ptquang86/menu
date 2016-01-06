@@ -1,6 +1,8 @@
 ".win": { backgroundColor: '#fff' }
-".win[platform=ios]": { barColor: '#3c6ad2', statusBarStyle: Ti.UI.iPhone.StatusBar.LIGHT_CONTENT, navTintColor: '#fff', titleAttributes: { color: '#fff' }, translucent: false }
-".win[platform=android]": { exitOnClose: false, windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN }
+".win[platform=ios]": { statusBarStyle: Ti.UI.iPhone.StatusBar.LIGHT_CONTENT }
+".win[platform=android]": { exitOnClose: false, windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_PAN | Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN }
+// ".nav-visible[platform=ios]": { barColor: '#3c6ad2', navTintColor: '#fff', titleAttributes: { color: '#fff' }, translucent: false }
+// ".nav-visible[platform=android]": {  }
 // ".nav-hidden[platform=ios]": { navBarHidden: true }
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
 
