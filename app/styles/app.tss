@@ -5,6 +5,7 @@
 // ".nav-visible[platform=android]": {  }
 // ".nav-hidden[platform=ios]": { navBarHidden: true }
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
+// ".nav-shadow-hidden[platform=ios]": { barImage: '/images/blank.png', hideShadow: true }
 
 	// ".body": { layout: 'vertical' }
 
