@@ -4,10 +4,8 @@ exports.init = function() {
 		// title: 'Notifications',
 		// params: {}
 	// }, false);
-// 		
-	// Alloy.Globals.UI.updateNav({
-  		// rightNavButtons: []
-  	// });
+	
+  	loadMenu();
 };
 
 exports.cleanup = function() {
@@ -21,3 +19,10 @@ exports.reload = function() {
 exports.unload = function() {
 	
 };
+
+function loadMenu() {
+  	Alloy.Globals.UI.updateNav({
+  		title: '',
+  		rightNavButtons: []
+  	});
+}

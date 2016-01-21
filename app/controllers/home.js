@@ -49,15 +49,13 @@ exports.getView = function() {
 };
 
 function menuLoad() {
-	// hide AI by default - for plugins.js
-	$.drawer.window.hasAI = 'false';
-	
   	if (OS_IOS) {
 		// hack navigationWindow for window manager
 		$.drawer.window.hasNavigationWindow = 'false';
 	}
 	
 	Alloy.Globals.UI.updateNav = updateNav;
+	Alloy.Globals.UI.getCenterWindow = getCenterWindow;
 	Alloy.Globals.UI.setCenterWindow = setCenterWindow;
 	Alloy.Globals.UI.toggleLeftWindow = toggleLeftWindow;
 	
@@ -91,6 +89,7 @@ function menuUnload(e) {
 		controller = null;
 	}
 	// Alloy.Globals.UI.toggleLeftWindow = null;
+	// Alloy.Globals.UI.getCenterWindow = null;
 	// Alloy.Globals.UI.setCenterWindow = null;
 	// Alloy.Globals.UI.updateNav = null;
 	// Alloy.Globals.UI.Menu = null;
@@ -110,7 +109,7 @@ function setLeftWindow() {
 		updateMenu: menu.update
 	};
 	
-	var left = $.UI.create(OS_IOS ? 'Window' : 'View', { classes: 'win' });
+	var left = $.UI.create(OS_IOS ? 'Window' : 'View', { classes: 'win nav-visible' });
 	left.add( menu.getView() );
 	
 	$.drawer.setLeftWindow(left);
@@ -134,7 +133,7 @@ function setCenterWindow(params, hideDrawer) {
 	
 	var center;
 	if (OS_IOS) {
-		var win = $.UI.create('Window', { classes: 'win' });
+		var win = $.UI.create('Window', { classes: 'win nav-visible' });
 		win.addEventListener('open', centerWindowReady);
 		win.add( controller.getView() );
 		center = Ti.UI.iOS.createNavigationWindow({ window: win });
@@ -143,7 +142,7 @@ function setCenterWindow(params, hideDrawer) {
 		var cache = Alloy.Globals.WinManager.getCache(0); // page home
 		cache && (cache.navigationWindow = center);
 	} else {
-		center = $.UI.create('View', { classes: 'win' });
+		center = $.UI.create('View', { classes: 'win nav-visible' });
 		center.addEventListener('postlayout', centerWindowReady);
 		center.add( controller.getView() );
 	}
@@ -159,6 +158,16 @@ function setCenterWindow(params, hideDrawer) {
   	if (cache.length > 1) {
   		Alloy.Globals.WinManager.loadPrevious(null, cache.length - 1, false);
   	}
+}
+
+function getCenterWindow() {
+	var drawer = OS_IOS ? $.drawer.getCenterWindow() : $.drawer;
+	if (drawer) { 
+		return drawer.window;
+	} else {
+		Ti.API.error('error: drawer is not ready!!');
+		return null;
+	}
 }
 
 function centerWindowReady(e) {
@@ -181,7 +190,11 @@ function updateNav(nav) {
 		// }];
 	// }
 	
-	var oNav = require('managers/nav');
-	oNav.load((OS_IOS ? $.drawer.getCenterWindow() : $.drawer).window, nav);
+	var centerWindow = getCenterWindow();
+	if (centerWindow) {
+		require('managers/nav').load(centerWindow, nav);
+	} else {
+		Ti.API.error('updateNav: drawer is not ready, call updateNav in exports.init !!');
+	}
 }
 
