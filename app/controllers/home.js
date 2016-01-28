@@ -128,6 +128,8 @@ function setCenterWindow(params, hideDrawer) {
 	// currentUrl = params.url;
 	
 	menuUnload();
+
+	Ti.API.info('Home: setCenterWindow ' + JSON.stringify( params ));
 	
 	controller = Alloy.createController(params.url, params.params);
 	
