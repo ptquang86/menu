@@ -1,7 +1,6 @@
 exports.init = function() {
 	// Alloy.Globals.UI.setCenterWindow({
 		// url:  'home/notification',
-		// title: 'Notifications',
 		// params: {}
 	// }, false);
 	

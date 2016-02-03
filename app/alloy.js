@@ -1,6 +1,6 @@
-/*
 (function() {
 	
+	/*
 	var displayCaps = Ti.Platform.displayCaps,
 		platformWidth = displayCaps.platformWidth,
 		platformHeight = displayCaps.platformHeight;
@@ -18,13 +18,13 @@
 			Ti.API.error('alloy.js: Delete the [build] + [Resources] folders then build again.');
 		}
 	}
+	*/
 	
   	Alloy.Globals.UI = {
-  		Win: {
-  			Width: platformWidth,
-  			Height: platformHeight
-  		}
+  		// Win: {
+  			// Width: platformWidth,
+  			// Height: platformHeight
+  		// }
   	};
   	
 })();
-*/

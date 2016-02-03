@@ -37,8 +37,7 @@ function menuClick(e) {
 		default:
 			var item = e.section.getItemAt(e.itemIndex),
 				data = {
-		  			title:  item.title.text,
-		  			url: 	url
+		  			url: url
 		  		};
 		  	Alloy.Globals.UI.setCenterWindow(data);
 			break;		

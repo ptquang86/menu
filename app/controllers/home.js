@@ -1,6 +1,5 @@
 /*
  args = {
- 	title: 'window title',
  	url: 'window url',
  	params: OBJ
  }
@@ -150,10 +149,6 @@ function setCenterWindow(params, hideDrawer) {
 	}
 	
 	$.drawer.setCenterWindow(center);
-	
-	var nav = { title: params.title || '' };
-	if (OS_ANDROID) { nav.rightNavButtons = []; }
-	updateNav(nav);
 	
   	// cleanup children windows
   	var cache = Alloy.Globals.WinManager.getCache();
