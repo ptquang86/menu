@@ -1,13 +1,11 @@
 <Alloy>
-	<View>
-		<ListView id="lvMenu" class="lv menu" defaultItemTemplate="template" onItemclick="menuClick">
-	        <Templates>
-	            <ItemTemplate name="template" class="li">
-	                <ImageView bindId="icon" class="li-icon"/>
-	                <Label bindId="title" class="li-title"/>
-	            </ItemTemplate>
-	        </Templates>
-	        <HeaderView><View class="hv"/></HeaderView>
-	    </ListView>
-    </View>
+	<ListView id="lv" class="lv menu" defaultItemTemplate="template" onItemclick="menuClick">
+        <Templates>
+            <ItemTemplate name="template" class="li">
+                <ImageView bindId="icon" class="li-icon"/>
+                <Label bindId="title" class="li-title"/>
+            </ItemTemplate>
+        </Templates>
+        <HeaderView><View class="hv"/></HeaderView>
+    </ListView>
 </Alloy>

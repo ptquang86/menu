@@ -7,10 +7,11 @@
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
 // ".nav-shadow-hidden[platform=ios]": { barImage: '/images/blank.png', hideShadow: true }
 
-	// ".body": { layout: 'vertical' }
-
 	// "Button[platform=android]": { backgroundColor: 'transparent' }
 	// "MenuItem[platform=android]": { showAsAction: Titanium.Android.SHOW_AS_ACTION_ALWAYS }
+	// "TextField[platform=android]": { hintTextColor: '#c7c7cd' }
+
+	// ".scroller": { contentWidth: '100%', layout: 'vertical', scrollType: 'vertical' }
 
 	// ".ai": { /* height: Titanium.UI.SIZE, top: 20, bottom: 20, */ style: Titanium.UI.ActivityIndicatorStyle.DARK }
 

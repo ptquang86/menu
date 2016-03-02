@@ -53,6 +53,15 @@ function menuLoad() {
 		$.drawer.window.hasNavigationWindow = 'false';
 	}
 	
+	// set left window width
+	// $.drawer.setLeftDrawerWidth(200);
+	
+	if (OS_ANDROID) {
+		// apply styles for window
+		var centerWindow = getCenterWindow();
+		centerWindow.applyProperties( $.createStyle({ classes: 'win nav-visible' }) );
+	}
+	
 	Alloy.Globals.UI.updateNav = updateNav;
 	Alloy.Globals.UI.getCenterWindow = getCenterWindow;
 	Alloy.Globals.UI.setCenterWindow = setCenterWindow;
