@@ -188,13 +188,22 @@ function centerWindowReady(e) {
   	}
 }
 
-function updateNav(nav) {
-	// if (OS_IOS && (!nav.leftNavButton || !nav.leftNavButtons)) {
-		// nav.leftNavButtons = [{
-			// icon: '/images/menu.png',
-			// callback: toggleLeftWindow
-		// }];
-	// }
+function updateNav(nav, iosAddMenuButton, androidResetMenuItems) {
+	if (OS_IOS) {
+		if (iosAddMenuButton !== false && nav.leftNavButtons == null) {
+			nav.leftNavButtons = [{
+				icon: '/images/menu.png',
+				callback: toggleLeftWindow
+			}];
+		}
+	} else if (androidResetMenuItems !== false) {
+		if (nav.leftNavButtons == null) {
+			nav.leftNavButtons = [];
+		}
+		if (nav.rightNavButtons == null) {
+			nav.rightNavButtons = [];
+		}
+	}
 	
 	var centerWindow = getCenterWindow();
 	if (centerWindow) {
