@@ -127,7 +127,7 @@ function toggleLeftWindow(e) {
     $.drawer.toggleLeftWindow();
 }
 
-function setCenterWindow(params, hideDrawer) {
+function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 	if (hideDrawer !== false && $.drawer.isLeftWindowOpen()) {
 		toggleLeftWindow();
 	}
@@ -160,9 +160,11 @@ function setCenterWindow(params, hideDrawer) {
 	$.drawer.setCenterWindow(center);
 	
   	// cleanup children windows
-  	var cache = Alloy.Globals.WinManager.getCache();
-  	if (cache.length > 1) {
-  		Alloy.Globals.WinManager.loadPrevious(null, cache.length - 1, false);
+  	if (closeOtherWindows) {
+  		var cache = Alloy.Globals.WinManager.getCache();
+	  	if (cache.length > 1) {
+	  		Alloy.Globals.WinManager.loadPrevious(null, cache.length - 1, false);
+	  	}
   	}
 }
 
