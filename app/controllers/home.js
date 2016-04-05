@@ -1,10 +1,12 @@
 /*
  args = {
  	url: 'window url',
- 	params: OBJ
+ 	params: OBJ,
+ 	navBarHidden: false
  }
  * */
 var args = arguments[0],
+	classes = args.navBarHidden ? 'win nav-hidden' : 'win nav-visible', 
 	// currentUrl,
 	controller;
 
@@ -59,7 +61,7 @@ function menuLoad() {
 	if (OS_ANDROID) {
 		// apply styles for window
 		var centerWindow = getCenterWindow();
-		centerWindow.applyProperties( $.createStyle({ classes: 'win nav-visible' }) );
+		centerWindow.applyProperties( $.createStyle({ classes: classes }) );
 	}
 	
 	Alloy.Globals.UI.updateNav = updateNav;
@@ -117,7 +119,7 @@ function setLeftWindow() {
 		updateMenu: menu.update
 	};
 	
-	var left = $.UI.create(OS_IOS ? 'Window' : 'View', { classes: 'win nav-visible' });
+	var left = $.UI.create(OS_IOS ? 'Window' : 'View', { classes: classes });
 	left.add( menu.getView() );
 	
 	$.drawer.setLeftWindow(left);
@@ -143,7 +145,7 @@ function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 	
 	var center;
 	if (OS_IOS) {
-		var win = $.UI.create('Window', { classes: 'win nav-visible' });
+		var win = $.UI.create('Window', { classes: classes });
 		win.addEventListener('open', centerWindowReady);
 		win.add( controller.getView() );
 		center = Ti.UI.iOS.createNavigationWindow({ window: win });
@@ -152,7 +154,7 @@ function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 		var cache = Alloy.Globals.WinManager.getCache(0); // page home
 		cache && (cache.navigationWindow = center);
 	} else {
-		center = $.UI.create('View', { classes: 'win nav-visible' });
+		center = $.UI.create('View', { classes: classes });
 		center.addEventListener('postlayout', centerWindowReady);
 		center.add( controller.getView() );
 	}
