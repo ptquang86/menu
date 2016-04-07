@@ -15,7 +15,8 @@
 
 	// ".ai": { /* height: Titanium.UI.SIZE, top: 20, bottom: 20, */ style: Titanium.UI.ActivityIndicatorStyle.DARK }
 
-	// ".lv": { backgroundColor: 'transparent', separatorColor: '#d6d6d6', separatorInsets: { left: 0, right: 0 } }
+	// ".lv": { backgroundColor: 'transparent' }
+	// ".lv-separator": { separatorColor: '#d6d6d6', separatorInsets: { left: 0, right: 0 } }
 	// // ".lv-noseparator": { separatorColor: 'transparent' }
 	// // ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iPhone.ListViewSeparatorStyle.NONE }
 		// // ".hv": { height: 8 }
