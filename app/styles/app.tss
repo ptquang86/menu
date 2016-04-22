@@ -19,15 +19,17 @@
 	// ".lv-separator": { separatorColor: '#d6d6d6', separatorInsets: { left: 0, right: 0 } }
 	// // ".lv-noseparator": { separatorColor: 'transparent' }
 	// // ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iPhone.ListViewSeparatorStyle.NONE }
+	// // ".lv-noseparator[platform=android]": { separatorHeight: 0 }
 		// // ".hv": { height: 8 }
 		// // ".fv": { height: Titanium.UI.SIZE }
 		// ".li": { backgroundColor: 'transparent', selectedBackgroundColor: '#d6d6d6' }
 		// // ".li[platform=ios]": { selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE }
-			// // ".li-title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
+			// // ".title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
 			
 	// ".txt-wrapper": {  }
 	// ".txt-wrapper[platform=ios]": { clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED }
 		// ".txt": { color: '#000', font: { fontSize: 14 }, backgroundColor: 'transparent' }
+		// ".txt[platform=android]": { softKeyboardOnFocus: Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS }
 		// ".txt-textfield": { height: 52, left: 10, right: 10 }
 		// ".txt-textfield[platform=ios]": { paddingLeft: 0, paddingRight: 0, clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS }
 		// ".txt-textfield[platform=android]": { hintTextColor: '#777' }
