@@ -1,11 +1,14 @@
 ".win": { backgroundColor: '#fff' }
 ".win[platform=ios]": { statusBarStyle: Ti.UI.iPhone.StatusBar.LIGHT_CONTENT }
 ".win[platform=android]": { exitOnClose: false, windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_PAN | Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN }
-// ".nav-visible[platform=ios]": { barColor: '#3c6ad2', navTintColor: '#fff', titleAttributes: { color: '#fff' }, translucent: false }
+// ".nav-visible[platform=ios]": { barColor: '#3c6ad2', translucent: false }
 // ".nav-visible[platform=android]": {  }
+// ".nav-title[platform=ios]": { navTintColor: '#fff', titleAttributes: { color: '#fff' } }
+// ".nav-title[platform=android]": {  }
+// ".nav-transparent[platform=ios]": { translucent: true, extendEdges: [Titanium.UI.EXTEND_EDGE_TOP] }
+// ".nav-shadow-hidden[platform=ios]": { barImage: '/images/blank.png', hideShadow: true }
 // ".nav-hidden[platform=ios]": { navBarHidden: true }
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
-// ".nav-shadow-hidden[platform=ios]": { barImage: '/images/blank.png', hideShadow: true }
 
 	// "Button[platform=android]": { backgroundColor: 'transparent' }
 	// "MenuItem[platform=android]": { showAsAction: Titanium.Android.SHOW_AS_ACTION_ALWAYS }
@@ -13,15 +16,15 @@
 
 	// ".scroller": { contentWidth: '100%', layout: 'vertical', scrollType: 'vertical' }
 
-	// ".ai": { /* height: Titanium.UI.SIZE, top: 20, bottom: 20, */ style: Titanium.UI.ActivityIndicatorStyle.DARK }
+	// ".ai": { top: 20, style: Titanium.UI.ActivityIndicatorStyle.DARK }
 
 	// ".lv": { backgroundColor: 'transparent' }
-	// ".lv-separator": { separatorColor: '#d6d6d6', separatorInsets: { left: 0, right: 0 } }
+	// ".lv-separator": { separatorColor: '#d6d6d6', rowSeparatorInsets: { left: 0, right: 0 } }
 	// // ".lv-noseparator": { separatorColor: 'transparent' }
 	// // ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iPhone.ListViewSeparatorStyle.NONE }
 	// // ".lv-noseparator[platform=android]": { separatorHeight: 0 }
 		// // ".hv": { height: 8 }
-		// // ".fv": { height: Titanium.UI.SIZE }
+		// // ".fv": { height: 8 }
 		// ".li": { backgroundColor: 'transparent', selectedBackgroundColor: '#d6d6d6' }
 		// // ".li[platform=ios]": { selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE }
 			// // ".title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
@@ -36,8 +39,8 @@
 		// ".txt-textarea": { height: '100%', left: 10, right: 10, suppressReturn: false }
 		// ".txt-textarea[platform=ios]": {  }
 		// ".txt-textarea[platform=android]": { hintTextColor: '#777' }
-		// ".txt-textfield-email": { keyboardType: Titanium.UI.KEYBOARD_EMAIL, autocapitalization: false, autocorrect: false }
+		// ".txt-textfield-email": { keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, autocapitalization: false, autocorrect: false }
 		// ".txt-textfield-password": { passwordMask: true }
-		// ".txt-textfield-number": { keyboardType: Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION }
+		// ".txt-textfield-number": { keyboardType: Titanium.UI.KEYBOARD_TYPE_NUMBERS_PUNCTUATION }
 		// ".txt-textfield-next": { returnKeyType: Titanium.UI.RETURNKEY_NEXT }
 		// ".txt-textfield-done": { returnKeyType: Titanium.UI.RETURNKEY_JOIN }
