@@ -3,7 +3,9 @@
 ".win[platform=android]": { exitOnClose: false, windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_PAN | Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN }
 // ".nav-visible[platform=ios]": { barColor: '#3c6ad2', translucent: false }
 // ".nav-visible[platform=android]": {  }
-// ".nav-title[platform=ios]": { navTintColor: '#fff', titleAttributes: { color: '#fff' } }
+// ".nav-button[platform=ios]": { font: { fontSize: 14, fontFamily: 'DIN-Regular' } }
+// ".nav-button[platform=android]": {}
+// ".nav-title[platform=ios]": { navTintColor: '#fff', titleAttributes: { color: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } } }
 // ".nav-title[platform=android]": {  }
 // ".nav-transparent[platform=ios]": { translucent: true, extendEdges: [Titanium.UI.EXTEND_EDGE_TOP] }
 // ".nav-shadow-hidden[platform=ios]": { barImage: '/images/blank.png', hideShadow: true }

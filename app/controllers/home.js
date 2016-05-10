@@ -2,6 +2,7 @@
  args = {
  	url: 'window url',
  	params: OBJ,
+ 	leftDrawerWidth: null,
  	navBarHidden: false
  }
  * */
@@ -56,7 +57,9 @@ function menuLoad() {
 	}
 	
 	// set left window width
-	// $.drawer.setLeftDrawerWidth(200);
+	if (args.leftDrawerWidth) {
+		$.drawer.setLeftDrawerWidth(args.leftDrawerWidth);
+	}
 	
 	if (OS_ANDROID) {
 		// apply styles for window
@@ -211,7 +214,7 @@ function updateNav(nav, iosAddMenuButton, androidResetMenuItems) {
 	
 	var centerWindow = getCenterWindow();
 	if (centerWindow) {
-		require('managers/nav').load(centerWindow, nav);
+		require('managers/nav').load(centerWindow, nav, $);
 	} else {
 		Ti.API.error('updateNav: drawer is not ready, call updateNav in exports.init !!');
 	}
