@@ -64,6 +64,7 @@ function menuLoad() {
 	if (OS_ANDROID) {
 		// apply styles for window
 		var centerWindow = getCenterWindow();
+		centerWindow.title = ''; // remove default title
 		centerWindow.applyProperties( $.createStyle({ classes: classes }) );
 	}
 	
