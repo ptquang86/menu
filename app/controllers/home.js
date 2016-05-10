@@ -195,7 +195,7 @@ function centerWindowReady(e) {
   	}
 }
 
-function updateNav(nav, iosAddMenuButton, androidResetMenuItems) {
+function updateNav(nav, iosAddMenuButton, androidResetMenuItems, G) {
 	if (OS_IOS) {
 		if (iosAddMenuButton !== false && nav.leftNavButtons == null) {
 			nav.leftNavButtons = [{
@@ -214,7 +214,7 @@ function updateNav(nav, iosAddMenuButton, androidResetMenuItems) {
 	
 	var centerWindow = getCenterWindow();
 	if (centerWindow) {
-		require('managers/nav').load(centerWindow, nav, $);
+		require('managers/nav').load(centerWindow, nav, G || $);
 	} else {
 		Ti.API.error('updateNav: drawer is not ready, call updateNav in exports.init !!');
 	}
