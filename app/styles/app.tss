@@ -21,15 +21,15 @@
 	// ".ai": { top: 20, style: Titanium.UI.ActivityIndicatorStyle.DARK }
 
 	// ".lv": { backgroundColor: 'transparent' }
-	// ".lv-separator": { separatorColor: '#d6d6d6', rowSeparatorInsets: { left: 0, right: 0 } }
-	// // ".lv-noseparator": { separatorColor: 'transparent' }
-	// // ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iPhone.ListViewSeparatorStyle.NONE }
-	// // ".lv-noseparator[platform=android]": { separatorHeight: 0 }
-		// // ".hv": { height: 8 }
-		// // ".fv": { height: 8 }
+	// ".lv-separator": { separatorColor: '#d6d6d6' }
+	// ".lv-separator[platform=ios]": { rowSeparatorInsets: { left: 0, right: 0 } }
+	// ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iPhone.ListViewSeparatorStyle.NONE }
+	// ".lv-noseparator[platform=android]": { separatorHeight: 0 }
+		// ".hv": { height: 8 }
+		// ".fv": { height: 8 }
 		// ".li": { backgroundColor: 'transparent', selectedBackgroundColor: '#d6d6d6' }
-		// // ".li[platform=ios]": { selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE }
-			// // ".title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
+		// ".li[platform=ios]": { selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE }
+			// ".title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
 			
 	// ".txt-wrapper": {  }
 	// ".txt-wrapper[platform=ios]": { clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED }

@@ -1,6 +1,9 @@
-".menu": { backgroundColor: '#fff', separatorColor: 'transparent' }
-	".hv[platform=ios]": { height: 40 }
-	".hv[platform=android]": { height: 0 }
-	".li": { height: 48, backgroundColor: '#fff', selectedBackgroundColor: '#fff' }
-		".li-icon": { width: 24, height: 24, left: 16 }
-		".li-title": { left: 72, right: 16, color: '#000', font: { fontSize: 14 } }
+".lv": { backgroundColor: '#fff' }
+".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iPhone.ListViewSeparatorStyle.NONE }
+".lv-noseparator[platform=android]": { separatorHeight: 0 }
+	".hv": { height: 8 }
+	".fv": { height: 8 }
+	".li": { height: 48, backgroundColor: 'transparent' }
+	".li[platform=ios]": { selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE }
+		".icon": { width: 24, height: 24, left: 16 }
+		".title": { left: 72, right: 16, color: '#000', font: { fontSize: 14 } }

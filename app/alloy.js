@@ -34,11 +34,12 @@
   		// IsScreen320: IsScreen320,
   		// IsScreen375: IsScreen375,
   		// IsScreen414: IsScreen414,
-  		// IsScreenBig: IsScreenBig,
   		// ScreenScale: ScreenScale,
   		// platformWidth: platformWidth,
   		// platformHeight: platformHeight
   	};
+  	
+  	Ti.API.info('=== Alloy.Globals.UI ' + JSON.stringify( Alloy.Globals.UI ));
   	
 })();
 // */

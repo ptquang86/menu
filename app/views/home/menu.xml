@@ -1,11 +1,12 @@
 <Alloy>
-	<ListView id="lv" class="lv menu" defaultItemTemplate="template" onItemclick="menuClick">
+	<ListView id="lv" class="lv lv-noseparator" defaultItemTemplate="template" onItemclick="menuClick">
         <Templates>
             <ItemTemplate name="template" class="li">
-                <ImageView bindId="icon" class="li-icon"/>
-                <Label bindId="title" class="li-title"/>
+                <ImageView bindId="icon" class="icon"/>
+                <Label bindId="title" class="title"/>
             </ItemTemplate>
         </Templates>
         <HeaderView><View class="hv"/></HeaderView>
+				<FooterView><View class="fv"/></FooterView>
     </ListView>
 </Alloy>
