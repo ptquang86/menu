@@ -119,8 +119,9 @@ function setLeftWindow() {
 	var menu = Alloy.createController('home/menu');
 	
 	Alloy.Globals.UI.Menu = {
-		reloadMenu: menu.reload,
-		updateMenu: menu.update
+		reload: menu.reload || function(){},
+		update: menu.update || function(data){},
+		toggle: menu.toggle || function(visible){}
 	};
 	
 	var left = $.UI.create(OS_IOS ? 'Window' : 'View', { classes: classes });
@@ -221,3 +222,10 @@ function updateNav(nav, iosAddMenuButton, androidResetMenuItems, G) {
 	}
 }
 
+function windowDidOpen(e) {
+  	Alloy.Globals.UI.Menu.toggle(true);
+}
+
+function windowDidClose(e) {
+  	Alloy.Globals.UI.Menu.toggle(false);
+}

@@ -62,6 +62,10 @@ exports.update = function(params) {
 	section.updateItemAt(params.index, item, { animated: false });	
 };
 
+exports.toggle = function(visible) {
+	
+};
+
 function menuClick(e) {
 	var url = e.itemId;
 	

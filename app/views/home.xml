@@ -1,3 +1,4 @@
 <Alloy>
-	<Widget id="drawer" src="nl.fokkezb.drawer"/>
+	<Widget id="drawer" src="nl.fokkezb.drawer"
+		onWindowDidOpen="windowDidOpen" onWindowDidClose="windowDidClose"/>
 </Alloy>
