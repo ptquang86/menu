@@ -1,16 +1,13 @@
 ".win": { backgroundColor: '#fff' }
 ".win[platform=ios]": { statusBarStyle: Ti.UI.iPhone.StatusBar.LIGHT_CONTENT }
 ".win[platform=android]": { exitOnClose: false, windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_PAN | Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN }
-// ".nav-visible[platform=ios]": { barColor: '#3c6ad2', translucent: false }
-// ".nav-visible[platform=android]": {  }
-// ".nav-button[platform=ios]": { font: { fontSize: 14, fontFamily: 'DIN-Regular' } }
-// ".nav-button[platform=android]": {}
-// ".nav-title[platform=ios]": { navTintColor: '#fff', titleAttributes: { color: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } } }
-// ".nav-title[platform=android]": {  }
-// ".nav-transparent[platform=ios]": { translucent: true, extendEdges: [Titanium.UI.EXTEND_EDGE_TOP] }
-// ".nav-shadow-hidden[platform=ios]": { barImage: '/images/blank.png', hideShadow: true }
 // ".nav-hidden[platform=ios]": { navBarHidden: true }
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
+// ".nav-visible[platform=ios]": { barColor: '#3c6ad2', translucent: false }
+// ".nav-button[platform=ios]": { navTintColor: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } }
+// ".nav-title[platform=ios]": { titleAttributes: { color: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } } }
+// ".nav-transparent[platform=ios]": { translucent: true, extendEdges: [Titanium.UI.EXTEND_EDGE_TOP] }
+// ".nav-shadow-hidden[platform=ios]": { barImage: '/images/blank.png', hideShadow: true }
 
 	// "Button[platform=android]": { backgroundColor: 'transparent' }
 	// "MenuItem[platform=android]": { showAsAction: Titanium.Android.SHOW_AS_ACTION_ALWAYS }
