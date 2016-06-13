@@ -19,7 +19,7 @@
 
 	// ".lv": { backgroundColor: 'transparent' }
 	// ".lv-separator": { separatorColor: '#d6d6d6' }
-	// ".lv-separator[platform=ios]": { rowSeparatorInsets: { left: 0, right: 0 } }
+	// ".lv-separator[platform=ios]": { tableSeparatorInsets: { left: 0, right: 0 } }
 	// ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iPhone.ListViewSeparatorStyle.NONE }
 	// ".lv-noseparator[platform=android]": { separatorHeight: 0 }
 		// ".hv": { height: 8 }
