@@ -3,11 +3,11 @@
  	url: 'window url',
  	params: OBJ,
  	leftDrawerWidth: null,
- 	classes: 'win nav-visible'
+ 	classes: 'win nav-visible nav-button nav-title'
  }
  * */
 var args = arguments[0],
-	classes = args.classes || 'win nav-visible', 
+	classes = args.classes || 'win nav-visible nav-button nav-title', 
 	// currentUrl,
 	controller;
 
