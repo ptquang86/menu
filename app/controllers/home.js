@@ -1,7 +1,7 @@
 /*
  args = {
  	url: 'window url',
- 	params: OBJ,
+ 	params: {},
  	leftDrawerWidth: null,
  	classes: 'win nav-visible nav-button nav-title'
  }
@@ -50,13 +50,27 @@ exports.getView = function() {
     return getCenterWindow();
 };
 
+OS_IOS && (exports.getNavigationWindow = function() {
+	return $.drawer.getCenterWindow();
+});
+
+exports.doShow = function(params, win) {
+	$.drawer.open(params.openAnimation);
+};
+
+exports.doHide = function(params, win) {
+	$.drawer.close(params.closeAnimation);
+};
+
 function menuLoad() {
 	// set left window width
 	if (args.leftDrawerWidth) {
 		$.drawer.setLeftDrawerWidth(args.leftDrawerWidth);
 	}
 	
-	if (OS_ANDROID) {
+	if (OS_IOS) {
+		$.drawer.window.navBarHidden = true;
+	} else {
 		// apply styles for window
 		var centerWindow = getCenterWindow();
 		centerWindow.title = ''; // remove default title
@@ -141,9 +155,10 @@ function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 	
 	var center;
 	if (OS_IOS) {
-		center = $.UI.create('Window', { classes: classes });
-		center.addEventListener('open', centerWindowReady);
-		center.add( controller.getView() );
+		var win = $.UI.create('Window', { classes: classes });
+		win.addEventListener('open', centerWindowReady);
+		win.add( controller.getView() );
+		center = Ti.UI.iOS.createNavigationWindow({ window: win });
 	} else {
 		center = $.UI.create('View', { classes: classes });
 		center.addEventListener('postlayout', centerWindowReady);
@@ -161,10 +176,9 @@ function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 }
 
 function getCenterWindow() {
-	if (OS_IOS) { 
-		return $.drawer.getCenterWindow();
-	} else if (OS_ANDROID) {
-		return $.drawer.window;
+	var drawer = OS_IOS ? $.drawer.getCenterWindow() : $.drawer;
+	if (drawer) { 
+		return drawer.window;
 	} else {
 		Ti.API.error('error: drawer is not ready!!');
 		return null;
