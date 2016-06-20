@@ -47,15 +47,10 @@ Modules:
 */
 
 exports.getView = function() {
-    return $.drawer.window;
+    return getCenterWindow();
 };
 
 function menuLoad() {
-  	if (OS_IOS) {
-		// hack navigationWindow for window manager
-		$.drawer.window.hasNavigationWindow = 'false';
-	}
-	
 	// set left window width
 	if (args.leftDrawerWidth) {
 		$.drawer.setLeftDrawerWidth(args.leftDrawerWidth);
@@ -78,10 +73,6 @@ function menuLoad() {
 }
 
 function menuInit(cache) {
-  	if (OS_IOS) {
-		// hack navigationWindow for window manager
-		cache.navigationWindow = $.drawer.getCenterWindow();
-	}
 }
 
 function menuCleanup(e) {
@@ -150,20 +141,14 @@ function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 	
 	var center;
 	if (OS_IOS) {
-		var win = $.UI.create('Window', { classes: classes });
-		win.addEventListener('open', centerWindowReady);
-		win.add( controller.getView() );
-		center = Ti.UI.iOS.createNavigationWindow({ window: win });
-		
-		// hack navigationWindow for window manager
-		var cache = Alloy.Globals.WinManager.getCache(0); // page home
-		cache && (cache.navigationWindow = center);
+		center = $.UI.create('Window', { classes: classes });
+		center.addEventListener('open', centerWindowReady);
+		center.add( controller.getView() );
 	} else {
 		center = $.UI.create('View', { classes: classes });
 		center.addEventListener('postlayout', centerWindowReady);
 		center.add( controller.getView() );
 	}
-	
 	$.drawer.setCenterWindow(center);
 	
   	// cleanup children windows
@@ -176,9 +161,10 @@ function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 }
 
 function getCenterWindow() {
-	var drawer = OS_IOS ? $.drawer.getCenterWindow() : $.drawer;
-	if (drawer) { 
-		return drawer.window;
+	if (OS_IOS) { 
+		return $.drawer.getCenterWindow();
+	} else if (OS_ANDROID) {
+		return $.drawer.window;
 	} else {
 		Ti.API.error('error: drawer is not ready!!');
 		return null;
