@@ -69,7 +69,7 @@ function menuLoad() {
 	}
 	
 	if (OS_IOS) {
-		$.drawer.window.navBarHidden = true;
+		// $.drawer.getView().navBarHidden = true;
 	} else {
 		// apply styles for window
 		var centerWindow = getCenterWindow();
@@ -153,18 +153,18 @@ function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 	
 	controller = Alloy.createController(params.url, params.params);
 	
-	var center;
+	var centerWindow;
 	if (OS_IOS) {
 		var win = $.UI.create('Window', { classes: classes });
 		win.addEventListener('open', centerWindowReady);
 		win.add( controller.getView() );
-		center = Ti.UI.iOS.createNavigationWindow({ window: win });
+		centerWindow = Ti.UI.iOS.createNavigationWindow({ window: win });
 	} else {
-		center = $.UI.create('View', { classes: classes });
-		center.addEventListener('postlayout', centerWindowReady);
-		center.add( controller.getView() );
+		centerWindow = $.UI.create('View', { classes: classes });
+		centerWindow.addEventListener('postlayout', centerWindowReady);
+		centerWindow.add( controller.getView() );
 	}
-	$.drawer.setCenterWindow(center);
+	$.drawer.setCenterWindow(centerWindow);
 	
   	// cleanup children windows
   	if (closeOtherWindows) {
@@ -176,23 +176,16 @@ function setCenterWindow(params, hideDrawer, closeOtherWindows) {
 }
 
 function getCenterWindow() {
-	var drawer = OS_IOS ? $.drawer.getCenterWindow() : $.drawer;
-	if (drawer) { 
-		return drawer.window;
+	if (OS_IOS) { 
+		return $.drawer.getCenterWindow().window;
 	} else {
-		Ti.API.error('error: drawer is not ready!!');
-		return null;
+		return $.drawer.getView();
 	}
 }
 
 function centerWindowReady(e) {
   	if (controller) {
-  		var center = controller.getView().parent;
-  		if (OS_IOS) {
-  			center.removeEventListener('open', centerWindowReady);
-  		} else {
-  			center.removeEventListener('postlayout', centerWindowReady);
-  		}
+  		this.removeEventListener(OS_IOS ? 'open' : 'postlayout', centerWindowReady);
   		controller.init && controller.init();
   	}
 }
