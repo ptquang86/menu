@@ -16,7 +16,7 @@ function init() {
 	menuLoad();
 }
 
-exports.init = function(cache) {
+exports.load = function(cache) {
 	menuInit(cache);
 };
 
@@ -186,7 +186,7 @@ function getCenterWindow() {
 function centerWindowReady(e) {
   	if (controller) {
   		this.removeEventListener(OS_IOS ? 'open' : 'postlayout', centerWindowReady);
-  		controller.init && controller.init();
+  		controller.load && controller.load();
   	}
 }
 
@@ -211,7 +211,7 @@ function updateNav(nav, iosAddMenuButton, androidResetMenuItems, G) {
 	if (centerWindow) {
 		require('managers/nav').load(centerWindow, nav, G || $);
 	} else {
-		Ti.API.error('updateNav: drawer is not ready, call updateNav in exports.init !!');
+		Ti.API.error('updateNav: drawer is not ready, call updateNav in exports.load !!');
 	}
 }
 
