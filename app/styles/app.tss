@@ -41,5 +41,11 @@
 		// ".txt-textfield-email": { keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, autocapitalization: false, autocorrect: false }
 		// ".txt-textfield-password": { passwordMask: true }
 		// ".txt-textfield-number": { keyboardType: Titanium.UI.KEYBOARD_TYPE_NUMBERS_PUNCTUATION }
+		// ".txt-textfield-done": { returnKeyType: Titanium.UI.RETURNKEY_DONE }
 		// ".txt-textfield-next": { returnKeyType: Titanium.UI.RETURNKEY_NEXT }
-		// ".txt-textfield-done": { returnKeyType: Titanium.UI.RETURNKEY_JOIN }
+		// ".txt-textfield-search": { returnKeyType: Titanium.UI.RETURNKEY_SEARCH }
+		// ".txt-textfield-send": { returnKeyType: Titanium.UI.RETURNKEY_SEND }
+			// ".txt-hinttext": { attributes: [{ range: [0, 14], value: '#333', type: Ti.UI.ATTRIBUTE_FOREGROUND_COLOR }] }
+			
+
+
