@@ -35,7 +35,7 @@
 		// ".txt-textfield": { height: 52, left: 10, right: 10 }
 		// ".txt-textfield[platform=ios]": { paddingLeft: 0, paddingRight: 0, clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS }
 		// ".txt-textfield[platform=android]": { hintTextColor: '#777' }
-		// ".txt-textarea": { height: '100%', left: 10, right: 10, suppressReturn: false }
+		// ".txt-textarea": { height: '100%', left: 5, right: 5, suppressReturn: false }
 		// ".txt-textarea[platform=ios]": {  }
 		// ".txt-textarea[platform=android]": { hintTextColor: '#777' }
 		// ".txt-textfield-email": { keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, autocapitalization: false, autocorrect: false }
