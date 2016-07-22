@@ -1,4 +1,6 @@
 <Alloy>
-	<Widget id="drawer" src="nl.fokkezb.drawer"
-		onWindowDidOpen="windowDidOpen" onWindowDidClose="windowDidClose"/>
+	<Drawer id="drawer" module="dk.napp.drawer" platform="ios"/>
+	<Window id="win" title="" platform="android">
+		<Drawer id="drawer" module="com.tripvi.drawerlayout"/>
+	</Window>
 </Alloy>

@@ -8,7 +8,5 @@
 	"os:ios": {},
 	"os:mobileweb": {},
 	"os:windows": {},
-	"dependencies": {
-		"nl.fokkezb.drawer": "1.1.2"
-	}
+	"dependencies": {}
 }

@@ -1,3 +1,2 @@
-"#drawer": { leftDrawerWidth: 223 }
-"#drawer[platform=ios]": { openDrawerGestureMode: "OPEN_MODE_BEZEL_PANNING_CENTERWINDOW", closeDrawerGestureMode: "CLOSE_MODE_ALL" }
-"#drawer[platform=android]": { backgroundColor: '#0054a5', drawerLayout: true, openDrawerGestureMode: "OPEN_MODE_MARGIN", closeDrawerGestureMode: "CLOSE_MODE_TAP_CENTERWINDOW" }
+"#drawer": { leftDrawerWidth: 306.66 }
+"#drawer[if=Alloy.Globals.UI.IsScreen320]": { leftDrawerWidth: 280 }
