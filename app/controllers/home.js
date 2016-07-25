@@ -131,11 +131,14 @@ exports.orientationchange = function(e) {
 	orientationchangeCenter(e);
 };
 
-exports.getView = function() {
-    return controller.getView();
-};
+function getView() {
+  	return OS_IOS ? controller.getView().parent : $.win;
+}
+exports.getView = getView;
 
-OS_IOS && (exports.getNavigationWindow = getCenter);
+OS_IOS && (exports.getNavigationWindow = function() {
+    return $.drawer.getCenterWindow();
+});
 
 exports.doShow = function(params, win) {
 	if (OS_IOS) {
@@ -203,7 +206,7 @@ function unloadCenter(e) {
   	if (controller) {
 		controller._alreadyCleanup !== true && controller.cleanup && controller.cleanup();
 		controller.unload && controller.unload();
-		controller = null;
+		// controller = null; // TODO: this cause conflict with Win Manager - winDestroy, controller.getView() is null 
 	}
 }
 
@@ -211,10 +214,6 @@ function orientationchangeCenter(e) {
   	if (controller && controller.orientationchange) {
 		controller.orientationchange(e);
 	}
-}
-
-function getCenter() {
-  	return OS_IOS ? $.drawer.getCenterWindow() : $.drawer.getCenterView();
 }
 
 function setCenter(params, hideDrawer, closeOtherWindows) {
@@ -230,6 +229,11 @@ function setCenter(params, hideDrawer, closeOtherWindows) {
 	unloadCenter();
 
 	Ti.API.info('Home: setCenter ' + JSON.stringify( params ));
+	
+	if (params.params) {
+		Ti.API.error('Home: [params] parameter is deprecated.\nPlease use [data] parameter instead.');
+		params.data = params.params;
+	}
 	
 	controller = Alloy.createController(params.url, params.data);
 	
@@ -278,5 +282,5 @@ function updateNav(nav, iosAddMenuButton, androidResetMenuItems, G) {
 		}
 	}
 	
-	require('managers/nav').load(OS_IOS ? controller.getView().parent : $.win, nav, G || $);
+	require('managers/nav').load(getView(), nav, G || $);
 }
