@@ -97,17 +97,17 @@ function init() {
 		args.events = null;
 	}
 	
-	setCenter(args, false);
-	args.url = null;
-	args.data = null;
-	
-	setLeft();
-	
 	Alloy.Globals.UI.Home = {
 		toggleLeft: toggleLeft,
 		setCenter: setCenter,
 		updateNav: updateNav
 	};
+	
+	setCenter(args, false);
+	args.url = null;
+	args.data = null;
+	
+	setLeft();
 }
 
 exports.load = function(cache) {};
