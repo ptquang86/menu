@@ -1,5 +1,5 @@
 ".win": { backgroundColor: '#fff' }
-".win[platform=ios]": { statusBarStyle: Ti.UI.iPhone.StatusBar.LIGHT_CONTENT }
+".win[platform=ios]": { statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT }
 ".win[platform=android]": { exitOnClose: false, windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_PAN | Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN }
 // ".nav-hidden[platform=ios]": { navBarHidden: true }
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
@@ -19,13 +19,13 @@
 
 	// ".lv": { backgroundColor: 'transparent' }
 	// ".lv-separator": { separatorColor: '#d6d6d6' }
-	// ".lv-separator[platform=ios]": { tableSeparatorInsets: { left: 0, right: 0 } }
-	// ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iPhone.ListViewSeparatorStyle.NONE }
+	// ".lv-separator[platform=ios]": { listSeparatorInsets: { left: 0, right: 0 } }
+	// ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE }
 	// ".lv-noseparator[platform=android]": { separatorHeight: 0 }
 		// ".hv": { height: 8 }
 		// ".fv": { height: 8 }
 		// ".li": { backgroundColor: 'transparent', selectedBackgroundColor: '#d6d6d6' }
-		// ".li[platform=ios]": { selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE }
+		// ".li[platform=ios]": { selectionStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE }
 			// ".title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
 			
 	// ".txt-wrapper": {  }
