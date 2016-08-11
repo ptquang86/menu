@@ -124,7 +124,8 @@ exports.unload = function(e) {
 	unloadCenter(e);
 	unloadLeft(e);
 	
-	Alloy.Globals.UI.Home = null;
+	// comment this to prevent undefined call
+	// Alloy.Globals.UI.Home = null;
 };
 
 exports.orientationchange = function(e) {
