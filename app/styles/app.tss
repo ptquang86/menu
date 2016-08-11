@@ -20,7 +20,7 @@
 	// ".lv": { backgroundColor: 'transparent' }
 	// ".lv-separator": { separatorColor: '#d6d6d6' }
 	// ".lv-separator[platform=ios]": { listSeparatorInsets: { left: 0, right: 0 } }
-	// ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE }
+	// ".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE }
 	// ".lv-noseparator[platform=android]": { separatorHeight: 0 }
 		// ".hv": { height: 8 }
 		// ".fv": { height: 8 }
@@ -41,8 +41,8 @@
 		// ".txt-textfield-email": { keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, autocapitalization: false, autocorrect: false }
 		// ".txt-textfield-password": { passwordMask: true }
 		// ".txt-textfield-number": { keyboardType: Titanium.UI.KEYBOARD_TYPE_NUMBERS_PUNCTUATION }
-		// ".txt-textfield-done": { returnKeyType: Titanium.UI.RETURNKEY_DONE }
 		// ".txt-textfield-next": { returnKeyType: Titanium.UI.RETURNKEY_NEXT }
+		// ".txt-textfield-done": { returnKeyType: Titanium.UI.RETURNKEY_DONE }
 		// ".txt-textfield-search": { returnKeyType: Titanium.UI.RETURNKEY_SEARCH }
 		// ".txt-textfield-send": { returnKeyType: Titanium.UI.RETURNKEY_SEND }
 			// ".txt-hinttext": { attributes: [{ range: [0, 14], value: '#333', type: Ti.UI.ATTRIBUTE_FOREGROUND_COLOR }] }
