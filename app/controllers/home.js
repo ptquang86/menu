@@ -170,7 +170,7 @@ function setLeft() {
 	};
 	
 	if (OS_IOS) {
-		var left = $.UI.create('Window');
+		var left = $.UI.create('Window', { classes: args.classes });
 			left.add( menu.getView() );
 		$.drawer.setLeftWindow(left);
 	} else {
