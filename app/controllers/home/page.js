@@ -1,7 +1,7 @@
-exports.init = function() {
-	// Alloy.Globals.UI.setCenterWindow({
+exports.load = function() {
+	// Alloy.Globals.UI.Home.setCenter({
 		// url:  'home/notification',
-		// params: {}
+		// data: {}
 	// }, false);
 	
   	loadMenu();
@@ -20,7 +20,7 @@ exports.unload = function() {
 };
 
 function loadMenu() {
-  	Alloy.Globals.UI.updateNav({
+  	Alloy.Globals.UI.Home.updateNav({
   		title: '',
   		rightNavButtons: []
   	});

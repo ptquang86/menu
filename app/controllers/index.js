@@ -19,11 +19,12 @@ function init() {
 	    	url: 'home',
 	    	data: {
 			 	url: 'home/page',
-			 	params: {}
-	    	}
+			 	data: {}
+	    	},
+	    	reset: true
 	    });
     } else {
-    	winManager.load({ url: 'login' });
+    	winManager.load({ url: 'login', reset: true });
     }
 };
 
