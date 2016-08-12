@@ -68,14 +68,14 @@ function menuClick(e) {
 	switch (url) {
 		// case 'newsletter':
 			// Ti.Platform.openURL('');
-			// Alloy.Globals.UI.toggleLeftWindow();
+			// Alloy.Globals.UI.Home.toggleLeft();
 			// break;
 			
 		default:
 			// var item = e.section.getItemAt(e.itemIndex);
-		  	Alloy.Globals.UI.setCenterWindow({
+		  	Alloy.Globals.UI.Home.setCenter({
 	  			url: url,
-	  			// params: null
+	  			// data: null
 	  		});
 			break;		
 	}
