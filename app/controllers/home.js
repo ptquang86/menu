@@ -5,6 +5,10 @@
 
 /*
  Changes log:
+ - 15/08/16
+ 	+ Lazy load Left Window
+ 	+ Deprecate [Alloy.Globals.UI.Menu.reload]
+ 	+ Add [Alloy.Globals.UI.Menu.load] to replace [Alloy.Globals.UI.Menu.reload] function
  - 22/07/16
  	+ Remove the use of widget nl.fokkezb.drawer
  	+ Add [config] parameter
@@ -163,9 +167,12 @@ function setLeft() {
 	var menu = Alloy.createController('home/menu');
 	
 	Alloy.Globals.UI.Menu = {
-		reload: menu.reload || function(){},
+		load: menu.load || function(force){},
+		reload: function(){
+			Ti.API.error('Home: [Alloy.Globals.UI.Menu.reload] is removed.\nPlease use [Alloy.Globals.UI.Menu.load] instead.');
+		},
 		update: menu.update || function(data){},
-		toggle: menu.toggle || function(visible){
+		toggle: function(visible){
 			Ti.API.error('Home: [Alloy.Globals.UI.Menu.toggle] is removed.\nPlease use [events] params instead.');
 		}
 	};
@@ -179,8 +186,18 @@ function setLeft() {
 	}
 }
 
+var isLeftLoaded = false; 
+
 function toggleLeft() {
 	$.drawer.toggleLeftWindow();
+	
+	// lazy load left window
+	if (!isLeftLoaded) {
+		isLeftLoaded = true;
+		return setTimeout(function() {
+			Alloy.Globals.UI.Menu.load(false);
+		}, 0);
+	}
 }
 
 function unloadLeft(e) {

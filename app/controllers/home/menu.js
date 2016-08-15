@@ -1,18 +1,45 @@
 init();
 
-// one section
+init();
 function init() {
-  	var items = [
+  	toggleAI(true);
+}
+
+function toggleAI(visible) {
+  	if (visible) {
+		$.ai.height = Titanium.UI.SIZE;
+		$.ai.top = 153;
+		$.ai.show();
+	} else {
+		$.ai.hide();
+		$.ai.height = 0;
+		$.ai.top = 0;
+	}
+}
+
+var isLeftLoaded = false;
+
+// one section
+exports.load = function(force) {
+    if (force === false && isLeftLoaded === true) { return; }
+    isLeftLoaded = true;
+    
+   	var items = [
   		{ properties: { itemId: 'home/page' }, title: { text: 'Test page' }, icon: { image: '/images/menu/timeline.png' } },
   	];
   	
   	$.lv.sections = [ Ti.UI.createListSection({ items: items }) ];
-}
+  	
+  	toggleAI(false);
+};
 
 /*
 // multiple sections
-function init() {
-	var menu = [
+exports.load = function(force) {
+    if (force === false && isLeftLoaded === true) { return; }
+    isLeftLoaded = true;
+    
+   	var menu = [
 		{ 
 			headerTitle: 'Account', 
 			items: [
@@ -39,10 +66,10 @@ function init() {
 	};
 	
   	$.lv.sections = sections;
-}
+  	
+  	toggleAI(false);
+};
 */
-
-exports.reload = init;
 
 /*
  params = {
