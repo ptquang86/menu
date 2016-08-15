@@ -117,23 +117,23 @@ function init() {
 exports.load = function(cache) {};
 
 exports.cleanup = function(e) {
-	cleanupCenter(e);
+	return cleanupCenter(e);
 };
 
 exports.reload = function(e) {
-	reloadCenter(e);
+	return reloadCenter(e);
 };
 
 exports.unload = function(e) {
-	unloadCenter(e);
 	unloadLeft(e);
+	unloadCenter(e);
 	
 	// comment this to prevent undefined call
 	// Alloy.Globals.UI.Home = null;
 };
 
 exports.orientationchange = function(e) {
-	orientationchangeCenter(e);
+	return orientationchangeCenter(e);
 };
 
 function getView() {
@@ -147,17 +147,17 @@ OS_IOS && (exports.getNavigationWindow = function() {
 
 exports.doShow = function(params, win) {
 	if (OS_IOS) {
-		$.drawer.open(params.openAnimation);
+		return $.drawer.open(params.openAnimation);
 	} else {
-		$.win.open(params.openAnimation);
+		return $.win.open(params.openAnimation);
 	}
 };
 
 exports.doHide = function(params, win) {
 	if (OS_IOS) {
-		$.drawer.close(params.closeAnimation);
+		return $.drawer.close(params.closeAnimation);
 	} else {
-		$.win.close(params.closeAnimation);
+		return $.win.close(params.closeAnimation);
 	}
 };
 
@@ -180,9 +180,9 @@ function setLeft() {
 	if (OS_IOS) {
 		var left = $.UI.create('Window', { classes: args.classes });
 			left.add( menu.getView() );
-		$.drawer.setLeftWindow(left);
+		return $.drawer.setLeftWindow(left);
 	} else {
-		$.drawer.setLeftView( menu.getView() );
+		return $.drawer.setLeftView( menu.getView() );
 	}
 }
 
@@ -195,13 +195,14 @@ function toggleLeft() {
 	if (!isLeftLoaded) {
 		isLeftLoaded = true;
 		return setTimeout(function() {
-			Alloy.Globals.UI.Menu.load(false);
+			return Alloy.Globals.UI.Menu.load(false);
 		}, 0);
 	}
 }
 
 function unloadLeft(e) {
-  	Alloy.Globals.UI.Menu = null;
+	// comment this to prevent undefined call
+  	// Alloy.Globals.UI.Menu = null;
 }
 
 // == CENTER
@@ -209,14 +210,14 @@ function unloadLeft(e) {
 function cleanupCenter(e) {
   	if (controller && controller.cleanup) {
   		controller._alreadyCleanup = true;
-		controller.cleanup(e);
+		return controller.cleanup(e);
 	}
 }
 
 function reloadCenter(e) {
   	if (controller && controller.reload) {
   		controller._alreadyCleanup = false;
-		controller.reload(e);
+		return controller.reload(e);
 	}
 }
 
@@ -230,7 +231,7 @@ function unloadCenter(e) {
 
 function orientationchangeCenter(e) {
   	if (controller && controller.orientationchange) {
-		controller.orientationchange(e);
+		return controller.orientationchange(e);
 	}
 }
 
@@ -279,7 +280,9 @@ function setCenter(params, hideDrawer, closeOtherWindows) {
 function centerReady(e) {
   	if (controller) {
   		this.removeEventListener(OS_IOS ? 'open' : 'postlayout', centerReady);
-  		controller.load && controller.load();
+  		if (controller.load) {
+  			return controller.load();
+  		}
   	}
 }
 
@@ -300,5 +303,5 @@ function updateNav(nav, iosAddMenuButton, androidResetMenuItems, G) {
 		}
 	}
 	
-	require('managers/nav').load(getView(), nav, G || $);
+	return require('managers/nav').load(getView(), nav, G || $);
 }
