@@ -103,6 +103,7 @@ function init() {
 	
 	Alloy.Globals.UI.Home = {
 		toggleLeft: toggleLeft,
+		getView: getView,
 		setCenter: setCenter,
 		updateNav: updateNav
 	};
