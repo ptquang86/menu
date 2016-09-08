@@ -4,7 +4,7 @@
 // ".nav-hidden[platform=ios]": { navBarHidden: true }
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
 // ".nav-visible[platform=ios]": { barColor: '#3c6ad2', translucent: false }
-// ".nav-button[platform=ios]": { navTintColor: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } }
+// ".nav-button[platform=ios]": { color: '#fff', navTintColor: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } }
 // ".nav-title[platform=ios]": { titleAttributes: { color: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } } }
 // ".nav-transparent[platform=ios]": { barImage: '/images/blank.png', hideShadow: true, translucent: true, extendEdges: [Titanium.UI.EXTEND_EDGE_TOP] }
 // ".nav-transparent[platform=android]": { theme: 'TransparentActionBarDark' }
