@@ -28,7 +28,7 @@
     </style>
     
     <!-- theme: material theme for Ti.DrawerLayout -->
-    <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="@style/MaterialTheme">
+    <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
     	<item name="android:textColorPrimary">#ffffff</item>
     	<item name="android:background">#3a4450</item>
         <item name="windowActionBar">false</item>
