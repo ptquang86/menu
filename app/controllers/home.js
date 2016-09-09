@@ -162,6 +162,13 @@ exports.doHide = function(params, win) {
 	}
 };
 
+exports.androidback = function() {
+    if ( $.drawer.getIsLeftDrawerOpen() ) {
+    	$.drawer.closeLeftWindow();
+    	return false;
+    }
+};
+
 // == LEFT
 
 function setLeft() {
