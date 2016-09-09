@@ -1,2 +1,3 @@
-"#drawer": { leftDrawerWidth: 306.66 }
-"#drawer[if=Alloy.Globals.UI.IsScreen320]": { leftDrawerWidth: 280 }
+"#win[platform=android]": { theme: 'ThemeOverlay.AppCompat.Dark.ActionBar' }
+	"#drawer": { leftDrawerWidth: 306.66 }
+	"#drawer[if=Alloy.Globals.UI.IsScreen320]": { leftDrawerWidth: 280 }
