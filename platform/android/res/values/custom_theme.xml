@@ -29,20 +29,21 @@
     
     <!-- 
     	theme: material theme for Ti.DrawerLayout 
+    	https://github.com/manumaticx/Ti.DrawerLayout
     	primary color and theme ThemeOverlay.AppCompat.Dark.ActionBar
     	are used in Ti.DrawerLayout/android/platform/android/res/layout/drawer_main.xml
+    	primary color: action bar background color
     -->
     <color name="primary">#3a4450</color>
-    <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <!-- button menu white -->
+	<style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="colorPrimaryDark">#07111D</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
-    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
-	    <item name="spinBars">true</item>
-	    <item name="color">#ffffff</item>
-	</style>
+    <!-- button menu black 
+    <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">#07111D</item>
+    </style>
+    -->
     
     <!-- theme: transparent action-bar dark -->
 	<style name="TransparentActionBarDark" parent="@style/Theme.AppCompat">
