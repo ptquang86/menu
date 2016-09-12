@@ -27,10 +27,14 @@
         <item name="android:headerBackground">#E50000</item>
     </style>
     
-    <!-- theme: material theme for Ti.DrawerLayout -->
+    <!-- 
+    	theme: material theme for Ti.DrawerLayout 
+    	primary color and theme ThemeOverlay.AppCompat.Dark.ActionBar
+    	is used in Ti.DrawerLayout/android/platform/android/res/layout/drawer_main.xml
+    -->
+    <color name="primary">#3a4450</color>
     <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-    	<item name="android:textColorPrimary">#ffffff</item>
-    	<item name="android:background">#3a4450</item>
+        <item name="colorPrimaryDark">#07111D</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
