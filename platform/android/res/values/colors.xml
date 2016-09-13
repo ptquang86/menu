@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <!-- color name: primary 
+		is used in Ti.DrawerLayout/android/platform/android/res/layout/drawer_main.xml 
+		(https://github.com/manumaticx/Ti.DrawerLayout)
+		for action bar's background color
+		do not change!
+		-->
+	<color name="primary">#3c6ad2</color>
+	<color name="colorPrimaryDark">#2B54B6</color>
+	<color name="textColorPrimaryDark">#ffffff</color>
+	<color name="textColorPrimaryLight">#646464</color>
+	
+</resources>
