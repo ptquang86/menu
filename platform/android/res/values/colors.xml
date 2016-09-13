@@ -9,7 +9,9 @@
 		-->
 	<color name="primary">#3c6ad2</color>
 	<color name="colorPrimaryDark">#2B54B6</color>
+	<color name="colorPrimaryLight">#ffffff</color>
 	<color name="textColorPrimaryDark">#ffffff</color>
 	<color name="textColorPrimaryLight">#646464</color>
+	<color name="textColorHint">#ffffff</color>
 	
 </resources>
