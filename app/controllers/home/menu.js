@@ -71,6 +71,8 @@ exports.load = function(force) {
 };
 */
 
+exports.unload = function() {};
+
 /*
  params = {
  	sectionIndex: 0,

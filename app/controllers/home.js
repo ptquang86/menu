@@ -176,6 +176,7 @@ function setLeft() {
 	
 	Alloy.Globals.UI.Menu = {
 		load: menu.load || function(force){},
+		unload: menu.unload || function(){},
 		reload: function(){
 			Ti.API.error('Home: [Alloy.Globals.UI.Menu.reload] is removed.\nPlease use [Alloy.Globals.UI.Menu.load] instead.');
 		},
@@ -209,6 +210,8 @@ function toggleLeft() {
 }
 
 function unloadLeft(e) {
+	Alloy.Globals.UI.Menu.unload();
+	
 	// comment this to prevent undefined call
   	// Alloy.Globals.UI.Menu = null;
 }
