@@ -7,11 +7,14 @@
 		for action bar's background color
 		do not change!
 		-->
-	<color name="primary">#3c6ad2</color>
-	<color name="colorPrimaryDark">#2B54B6</color>
-	<color name="colorPrimaryLight">#ffffff</color>
-	<color name="textColorPrimaryDark">#ffffff</color>
-	<color name="textColorPrimaryLight">#646464</color>
+	<color name="primary">#3a4450</color>
+	<color name="colorPrimaryDark">#07111D</color>
 	<color name="textColorHint">#ffffff</color>
+	<color name="textColorPrimary">#ffffff</color>
+	
+	<color name="primaryLight">#ffffff</color>
+	<color name="colorPrimaryDarkLight">#ffffff</color>
+	<color name="textColorHintLight">#646464</color>
+	<color name="textColorPrimaryLight">#646464</color>
 	
 </resources>

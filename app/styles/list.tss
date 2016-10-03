@@ -1,0 +1,82 @@
+".lv": { backgroundColor: 'transparent', separatorColor: 'transparent' }
+".lv[platform=ios]": { separatorStyle: Titanium.UI.iPhone.ListViewSeparatorStyle.NONE }
+	".lv-hv": { height: 8 }
+	".lv-fv": { height: 8 }
+	
+	/* subheader */
+	".lv-sh": { height: 48 }
+		".lv-sh-title": { left: 16, color: '#8C000000' /*54%*/, font: { fontSize: 14, fontFamily: 'Roboto-Medium' } }
+	
+	/* list item */
+	
+	".li": { backgroundColor: 'transparent' }
+	".li[platform=ios]": { selectionStyle: Titanium.UI.iPhone.ListViewCellSelectionStyle.NONE }
+	
+	/* == single line == */
+	".li-1l": { height: 48 }
+		".li-1l-title": { left: 16, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+
+	/* single line with icon */
+	".li-1li": { height: 48 }
+		".li-1li-icon": { width: 24, height: 24, left: 16 }
+		".li-1li-title": { left: 72, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+
+	/* single line with avatar */
+	".li-1la": { height: 56 }
+		".li-1la-avatar": { width: 40, height: 40, left: 16, borderRadius: 20 }
+		".li-1la-title": { left: 72, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+
+	/* single line with avatar and icon */
+	".li-1lai": { height: 56 }
+		".li-1lai-avatar": { width: 40, height: 40, left: 16, borderRadius: 20 }
+		".li-1lai-title": { left: 72, right: 56, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-1lai-icon": { width: 24, height: 24, right: 16 }
+
+	/* == two lines == */
+	".li-2l": { height: 72 }
+		".li-2l-title": { top: 16, left: 16, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-2l-subtitle": { top: 36, left: 16, right: 16, color: '#000', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+	
+	/* two lines with icon */
+	".li-2li": { height: 72 }
+		".li-2li-icon": { width: 24, height: 24, left: 16 }
+		".li-2li-title": { top: 16, left: 72, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-2li-subtitle": { top: 36, left: 72, right: 16, color: '#000', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }	
+		
+	/* two lines with avatar */
+	".li-2la": { height: 72 }
+		".li-2la-avatar": { width: 40, height: 40, left: 16, borderRadius: 20 }
+		".li-2la-title": { top: 16, left: 72, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-2la-subtitle": { top: 36, left: 72, right: 16, color: '#000', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+		
+	/* two lines with avatar and icon */
+	".li-2lai": { height: 72 }
+		".li-2lai-avatar": { width: 40, height: 40, left: 16, borderRadius: 20 }
+		".li-2lai-title": { top: 16, left: 72, right: 56, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-2lai-subtitle": { top: 36, left: 72, right: 56, color: '#000', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+		".li-2lai-icon": { width: 24, height: 24, right: 16 }
+		
+	/* == three lines == */
+	".li-3l": { height: 88 }
+		".li-3l-title": { top: 16, left: 16, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-3l-subtitle": { top: 36, left: 16, right: 16, color: '#000', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+			
+	/* == three lines with icon == */
+	".li-3li": { height: 88 }
+		".li-3li-icon": { width: 24, height: 24, left: 16 }
+		".li-3li-title": { top: 16, left: 72, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-3li-subtitle": { top: 36, left: 72, right: 16, color: '#000', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+		
+	/* == three lines with avatar == */
+	".li-3la": { height: 88 }
+		".li-3la-avatar": { width: 40, height: 40, left: 16, borderRadius: 20 }
+		".li-3la-title": { top: 16, left: 72, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-3la-subtitle": { top: 36, left: 72, right: 16, color: '#000', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+		
+	/* == three lines with avatar and icon == */
+	".li-3lai": { height: 88 }
+		".li-3lai-avatar": { width: 40, height: 40, left: 16, borderRadius: 20 }
+		".li-3lai-title": { top: 16, left: 72, right: 56, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }
+		".li-3lai-subtitle": { top: 36, left: 72, right: 56, color: '#000', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+		".li-3lai-icon": { width: 24, height: 24, right: 16 }
+		

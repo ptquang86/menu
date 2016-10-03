@@ -1,0 +1,17 @@
+<Alloy>
+	<Window class="win">
+		
+		<ListView id="lv" class="lv" defaultItemTemplate="template">
+            <Templates>
+                <ItemTemplate name="template" class="li-2la">
+                    <ImageView bindId="avatar" class="li-2la-avatar"/>
+                    <Label bindId="title" class="li-2la-title"/>
+                    <Label bindId="subtitle" class="li-2la-subtitle"/>
+                </ItemTemplate>
+            </Templates>
+            <HeaderView><View class="lv-hv"/></HeaderView>
+            <FooterView><ActivityIndicator id="lvAI" class="ai"/></FooterView>
+        </ListView>
+		
+	</Window>
+</Alloy>

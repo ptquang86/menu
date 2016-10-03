@@ -5,31 +5,31 @@
     <style name="MaterialTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
     	<item name="android:textAllCaps">false</item>
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:textColorPrimary">@color/textColorPrimaryDark</item>
+        <!-- <item name="colorPrimaryDark">@color/colorPrimaryDark</item> -->
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorHint">@color/textColorHint</item>
-        <!-- date time picker theme -->
-        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
-        <item name="android:timePickerDialogTheme">@style/MyTimePickerDialogTheme</item>
-        <!-- search view theme -->
+        <!-- style: date time picker -->
+        <item name="android:datePickerDialogTheme">@style/DatePickerDialogTheme</item>
+        <item name="android:timePickerDialogTheme">@style/TimePickerDialogTheme</item>
+        <!-- style: search view -->
         <item name="searchViewStyle">@style/SearchViewStyle</item>
     </style>
-    <!-- theme: date time picker theme -->
-    <style name="MyDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
-    	<item name="colorAccent">#04BBEF</item>
-	    <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    <!-- style: date time picker -->
+    <style name="DatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+    	<item name="colorAccent">@color/primary</item>
+	    <item name="android:datePickerStyle">@style/DatePickerStyle</item>
 	</style>
-	<style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
-	    <item name="android:headerBackground">#E50000</item>
+	<style name="DatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+	    <item name="android:headerBackground">@color/primary</item>
 	</style>
-	<style name="MyTimePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">#04BBEF</item>
-        <item name="android:timePickerStyle">@style/MyTimePickerStyle</item>
+	<style name="TimePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:timePickerStyle">@style/TimePickerStyle</item>
     </style>
-    <style name="MyTimePickerStyle" parent="@android:style/Widget.Material.Light.TimePicker">
-        <item name="android:headerBackground">#E50000</item>
+    <style name="TimePickerStyle" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:headerBackground">@color/primary</item>
     </style>
-    <!-- theme: search view theme -->
+    <!-- style: search view -->
     <style name="SearchViewStyle" parent="Widget.AppCompat.Light.SearchView">
 	    <item name="queryBackground">@null</item>
 	    <item name="searchIcon">@null</item>
@@ -57,9 +57,9 @@
     -->
     
     <!-- theme: transparent action-bar dark -->
-	<style name="TransparentActionBarDark" parent="@style/Theme.AppCompat">
-		<item name="android:textColorPrimary">@color/textColorPrimaryDark</item>
-		<item name="actionMenuTextColor">@color/textColorPrimaryDark</item>
+	<style name="TransparentActionBar" parent="@style/Theme.AppCompat">
+		<item name="android:textColorPrimary">@color/textColorPrimary</item>
+		<item name="actionMenuTextColor">@color/textColorPrimary</item>
 		<item name="android:actionBarTheme">@style/ActionBarThemeDark</item>
 		<item name="android:actionBarStyle">@style/ActionBarStyleDark</item>
 		<item name="android:windowActionBarOverlay">true</item>
@@ -68,7 +68,7 @@
 		<item name="windowActionBarOverlay">true</item>
 	</style>
 	<style name="ActionBarThemeDark" parent="@style/ThemeOverlay.AppCompat.ActionBar">       
-	    <item name="colorControlNormal">@color/textColorPrimaryDark</item>
+	    <item name="colorControlNormal">@color/textColorPrimary</item>
 	</style>
 	<style name="ActionBarStyleDark" parent="@style/Widget.AppCompat.Light.ActionBar">
 	    <item name="elevation">0dp</item>      
@@ -76,10 +76,10 @@
 	    <item name="subtitleTextStyle">@style/SubtitleTextStyleDark</item>
 	</style>
 	<style name="TitleTextStyleDark" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
-	    <item name="android:textColor">@color/textColorPrimaryDark</item>
+	    <item name="android:textColor">@color/textColorPrimary</item>
 	</style>
 	<style name="SubtitleTextStyleDark" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
-	    <item name="android:textColor">@color/textColorPrimaryDark</item>
+	    <item name="android:textColor">@color/textColorPrimary</item>
 	</style>
 	
 	<!-- theme: transparent action-bar light -->

@@ -1,0 +1,12 @@
+
+".lv": { backgroundColor: 'transparent', separatorColor: 'transparent' }
+".lv[platform=ios]": { separatorStyle: Titanium.UI.iPhone.ListViewSeparatorStyle.NONE }
+	".lv-hv": { height: 8 }
+	".lv-fv": { height: 8 }
+	
+	".li": { backgroundColor: 'transparent' }
+	".li[platform=ios]": { selectionStyle: Titanium.UI.iPhone.ListViewCellSelectionStyle.NONE }
+	
+	/* == single line == */
+	".li-1l": { height: 48 }
+		".li-1l-title": { left: 16, right: 16, color: '#000', font: { fontSize: 16, fontFamily: 'Roboto-Regular' } }

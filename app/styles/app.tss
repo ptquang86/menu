@@ -1,17 +1,18 @@
-".win": { backgroundColor: '#fff' }
+".win": { backgroundColor: '#3a4450' }
 ".win[platform=ios]": { statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT }
 ".win[platform=android]": { exitOnClose: false, windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_PAN | Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN }
 // ".nav-hidden[platform=ios]": { navBarHidden: true }
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
-// ".nav-visible[platform=ios]": { barColor: '#3c6ad2', translucent: false }
-// ".nav-button[platform=ios]": { color: '#fff', navTintColor: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } }
-// ".nav-title[platform=ios]": { titleAttributes: { color: '#fff', font: { fontSize: 14, fontFamily: 'DIN-Regular' } } }
+// ".nav-visible[platform=ios]": { barColor: '#3a4450', translucent: false }
+// ".nav-visible[platform=android]": { theme: 'MaterialTheme' }
+// ".nav-button[platform=ios]": { color: '#fff', navTintColor: '#fff', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+// ".nav-title[platform=ios]": { titleAttributes: { color: '#fff', font: { fontSize: 17, fontFamily: 'Roboto-Regular' } } }
 // ".nav-transparent[platform=ios]": { barImage: '/images/blank.png', hideShadow: true, translucent: true, extendEdges: [Titanium.UI.EXTEND_EDGE_TOP] }
-// ".nav-transparent[platform=android]": { theme: 'TransparentActionBarDark' }
+// ".nav-transparent[platform=android]": { theme: 'TransparentActionBar' }
 
 	// "Button[platform=android]": { backgroundColor: 'transparent' }
 	// "MenuItem[platform=android]": { showAsAction: Titanium.Android.SHOW_AS_ACTION_ALWAYS }
-	// "TextField[platform=android]": { hintTextColor: '#c7c7cd' }
+	// "TextField[platform=android]": { hintTextColor: '#aeaeae' }
 
 	// ".scroller": { contentWidth: '100%', layout: 'vertical', scrollType: 'vertical' }
 
@@ -46,6 +47,3 @@
 		// ".txt-textfield-search": { returnKeyType: Titanium.UI.RETURNKEY_SEARCH }
 		// ".txt-textfield-send": { returnKeyType: Titanium.UI.RETURNKEY_SEND }
 			// ".txt-hinttext": { attributes: [{ range: [0, 14], value: '#333', type: Ti.UI.ATTRIBUTE_FOREGROUND_COLOR }] }
-			
-
-
