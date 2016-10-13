@@ -5,7 +5,7 @@
 // ".nav-hidden[platform=android]": { theme: 'Theme.AppCompat.NoTitleBar' }
 // ".nav-visible[platform=ios]": { barColor: '#3a4450', translucent: false }
 // ".nav-visible[platform=android]": { theme: 'MaterialTheme' }
-// ".nav-button[platform=ios]": { color: '#fff', navTintColor: '#fff', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
+// ".nav-button[platform=ios]": { backButtonTitle: '', color: '#fff', navTintColor: '#fff', font: { fontSize: 14, fontFamily: 'Roboto-Regular' } }
 // ".nav-title[platform=ios]": { titleAttributes: { color: '#fff', font: { fontSize: 17, fontFamily: 'Roboto-Regular' } } }
 // ".nav-transparent[platform=ios]": { barImage: '/images/blank.png', hideShadow: true, translucent: true, extendEdges: [Titanium.UI.EXTEND_EDGE_TOP] }
 // ".nav-transparent[platform=android]": { theme: 'TransparentActionBar' }
@@ -28,7 +28,7 @@
 		// ".li": { backgroundColor: 'transparent', selectedBackgroundColor: '#d6d6d6' }
 		// ".li[platform=ios]": { selectionStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE }
 			// ".title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
-			
+
 	// ".txt-wrapper": {  }
 	// ".txt-wrapper[platform=ios]": { clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED }
 		// ".txt": { color: '#000', font: { fontSize: 14 }, backgroundColor: 'transparent' }
