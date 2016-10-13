@@ -108,6 +108,7 @@ function init() {
 	}
 	
 	Alloy.Globals.UI.Home = {
+		isLeftOpen: isLeftOpen,
 		toggleLeft: toggleLeft,
 		getView: getView,
 		setCenter: setCenter,
@@ -220,6 +221,14 @@ function unloadLeft(e) {
 	
 	// comment this to prevent undefined call
   	// Alloy.Globals.UI.Menu = null;
+}
+
+function isLeftOpen() {
+	if (OS_IOS) {
+		return $.drawer.isLeftWindowOpen();
+	} else {
+		return $.drawer.getIsLeftDrawerOpen();
+	}
 }
 
 // == CENTER
