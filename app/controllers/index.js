@@ -1,6 +1,9 @@
 init();
 function init() {
-	Ti.UI.setTintColor("#f00");
+	Ti.UI.setBackgroundColor('#fff');
+	Ti.UI.setTintColor('#f00');
+	
+	//
 	
 	var oWindowManager = require('managers/window'),
 		winManager = new oWindowManager();

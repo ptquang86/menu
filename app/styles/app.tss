@@ -21,6 +21,7 @@
     
     /*
 	".scroller": { contentWidth: '100%', layout: 'vertical', scrollType: 'vertical' }
+	".scroller[platform=ios]": { keyboardDismissMode: Titanium.UI.iOS.KEYBOARD_DISMISS_MODE_ON_DRAG }
     
     ".lv": { backgroundColor: 'transparent' }
 	".lv-separator": { separatorColor: '#d6d6d6' }
