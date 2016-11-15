@@ -1,14 +1,10 @@
 init();
 function init() {
-	// var oPlugins = require('managers/plugins'),
-		// plugins  = new oPlugins({ ai: false, keyboard: false, toast: false });
+	Ti.UI.setTintColor("#f00");
 	
 	var oWindowManager = require('managers/window'),
 		winManager = new oWindowManager();
 		
-	// winManager
-		// .on('window:show', plugins.windowShow)
-		// .on('window:hide', plugins.windowHide);
 	OS_ANDROID && winManager.on('window:exit', exitConfirm);
 	
 	Alloy.Globals.WinManager = winManager;	
