@@ -25,8 +25,9 @@
 	// ".lv-noseparator[platform=android]": { separatorHeight: 0 }
 		// ".hv": { height: 8 }
 		// ".fv": { height: 8 }
-		// ".li": { backgroundColor: 'transparent', selectedBackgroundColor: '#d6d6d6' }
-		// ".li[platform=ios]": { selectionStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE }
+		// ".li": { backgroundColor: 'transparent' }
+        // ".li-selectable[platform=ios]": { selectedBackgroundColor: '#d6d6d6', selectedColor: '#000' }
+        // ".li-notselectable[platform=ios]": { selectionStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE }
 			// ".title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
 
 	// ".txt-wrapper": {  }
