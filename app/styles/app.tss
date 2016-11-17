@@ -24,6 +24,7 @@
 	".scroller[platform=ios]": { keyboardDismissMode: Titanium.UI.iOS.KEYBOARD_DISMISS_MODE_ON_DRAG }
     
     ".lv": { backgroundColor: 'transparent' }
+	".lv[platform=ios]": { keyboardDismissMode: Titanium.UI.iOS.KEYBOARD_DISMISS_MODE_ON_DRAG }
 	".lv-separator": { separatorColor: '#d6d6d6' }
 	".lv-separator[platform=ios]": { listSeparatorInsets: { left: 0, right: 0 } }
 	".lv-noseparator[platform=ios]": { separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE }
