@@ -173,7 +173,9 @@ exports.androidback = function() {
     if ( $.drawer.getIsLeftDrawerOpen() ) {
     	$.drawer.closeLeftWindow();
     	return false;
-    }
+    } else {
+		return backCenter(e);
+	}
 };
 
 // == LEFT
@@ -258,6 +260,12 @@ function unloadCenter(e) {
 function orientationchangeCenter(e) {
   	if (controller && controller.orientationchange) {
 		return controller.orientationchange(e);
+	}
+}
+
+function backCenter(e) {
+  	if (controller && controller.androidback) {
+		return controller.androidback(e);
 	}
 }
 
