@@ -1,6 +1,6 @@
 {
 	"global": {
-		"theme": "sexy"
+		"theme": "theme_default"
 	},
 	"env:development": {},
 	"env:test": {},
