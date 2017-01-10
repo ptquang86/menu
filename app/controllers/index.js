@@ -1,20 +1,20 @@
 init();
 function init() {
 	Ti.UI.setBackgroundColor('#fff');
-	Ti.UI.setTintColor('#f00');
-	
+	OS_IOS && Ti.UI.setTintColor('#f00');
+
 	//
-	
+
 	var oWindowManager = require('managers/window'),
 		winManager = new oWindowManager();
-		
+
 	OS_ANDROID && winManager.on('window:exit', exitConfirm);
-	
-	Alloy.Globals.WinManager = winManager;	
-	
+
+	Alloy.Globals.WinManager = winManager;
+
     // load UI
     if (0) {
-    	winManager.load({ 
+    	winManager.load({
 	    	url: 'home',
 	    	data: {
 			 	url: 'home/page',
