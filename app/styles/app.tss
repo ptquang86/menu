@@ -1,4 +1,4 @@
-".win": { backgroundColor: '#3a4450' }
+".win": { backgroundColor: '#fff' }
 ".win[platform=ios]": { statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT }
 ".win[platform=android]": { exitOnClose: false, windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_ADJUST_PAN | Ti.UI.Android.SOFT_INPUT_STATE_ALWAYS_HIDDEN }
 
@@ -12,17 +12,17 @@
 ".nav-transparent[platform=ios]": { barImage: '/images/blank.png', hideShadow: true, translucent: true, extendEdges: [Titanium.UI.EXTEND_EDGE_TOP] }
 ".nav-transparent[platform=android]": { theme: 'TransparentActionBar' }
 // */
-	
+
     /*
     "Button[platform=android]": { backgroundColor: 'transparent' }
 	"MenuItem[platform=android]": { showAsAction: Titanium.Android.SHOW_AS_ACTION_ALWAYS }
 	"TextField[platform=android]": { hintTextColor: '#aeaeae' }
     // */
-    
+
     /*
 	".scroller": { contentWidth: '100%', layout: 'vertical', scrollType: 'vertical' }
 	".scroller[platform=ios]": { keyboardDismissMode: Titanium.UI.iOS.KEYBOARD_DISMISS_MODE_ON_DRAG }
-    
+
     ".lv": { backgroundColor: 'transparent' }
 	".lv[platform=ios]": { keyboardDismissMode: Titanium.UI.iOS.KEYBOARD_DISMISS_MODE_ON_DRAG }
 	".lv-separator": { separatorColor: '#d6d6d6' }
@@ -36,7 +36,7 @@
         ".li-selectable[platform=ios]": { selectedBackgroundColor: '#d6d6d6', selectedColor: '#000' }
         ".li-notselectable[platform=ios]": { selectionStyle: Ti.UI.iOS.TableViewCellSelectionStyle.NONE }
 			".title": { left: 16, right: 16, color: '#000', font: { fontSize: 16 } }
-    
+
 	".txt-wrapper": {  }
 	".txt-wrapper[platform=ios]": { clipMode: Ti.UI.iOS.CLIP_MODE_ENABLED }
 		".txt": { color: '#000', font: { fontSize: 14 }, backgroundColor: 'transparent', padding: { left: 0, right: 0 } }
@@ -56,5 +56,3 @@
 		".txt-textfield-send": { returnKeyType: Titanium.UI.RETURNKEY_SEND }
 			".txt-hinttext": { attributes: [{ range: [0, 14], value: '#333', type: Ti.UI.ATTRIBUTE_FOREGROUND_COLOR }] }
     // */
-    
-    

@@ -1,3 +1,5 @@
-".theme-text": { color: '#646464', font: { fontSize: 13 } }
-".theme-separator": { backgroundColor: '#90646464' }
-".theme-textfield": { colorFocus: '#f3d160', colorFont: '#646464', font: { fontSize: 13 } }
+".theme-win": { backgroundColor: '#fff' }
+".theme-win[platform=ios]": { statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT }
+
+".theme-text": { color: '#646464', font: { fontSize: 13, fontFamily: 'Roboto-Regular' } }
+".theme-textfield": { colorFocus: '#f3d160', colorFont: '#646464', font: { fontSize: 13, fontFamily: 'Roboto-Regular' } }
