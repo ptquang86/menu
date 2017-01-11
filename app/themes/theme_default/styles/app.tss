@@ -2,4 +2,4 @@
 ".theme-win[platform=ios]": { statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT }
 
 ".theme-text": { color: '#646464', font: { fontSize: 13, fontFamily: 'Roboto-Regular' } }
-".theme-textfield": { colorFocus: '#f3d160', colorFont: '#646464', font: { fontSize: 13, fontFamily: 'Roboto-Regular' } }
+".theme-textfield": { color: '#646464', font: { fontSize: 13, fontFamily: 'Roboto-Regular' } }
