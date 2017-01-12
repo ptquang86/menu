@@ -28,6 +28,7 @@ WARNING: NAVIGATION BAR MAY COVER THE WINDOW CONTENT IF
  	+ Add [Alloy.Globals.UI.Home.toggleLeft] to replace [Alloy.Globals.UI.toggleLeftWindow] function
  	+ Deprecate [Alloy.Globals.UI.updateNav]
  	+ Add [Alloy.Globals.UI.Home.updateNav] to replace [Alloy.Globals.UI.updateNav] function
+	+ We have to call [Alloy.Globals.UI.Home.updateNav] manually
  	+ Removed [Alloy.Globals.UI.Menu.toggle]
  	+ Add [events] parameter to replace [Alloy.Globals.UI.Menu.toggle]
  * */
@@ -67,18 +68,18 @@ function init() {
 		Ti.API.error('Home: [Alloy.Globals.UI.toggleLeftWindow] is deprecated.\nPlease use [Alloy.Globals.UI.Home.toggleLeft] instead.');
 		toggleLeft();
 	};
-	
+
 	if (args.classes == null) {
 		args.classes = 'win nav-visible nav-button nav-title';
 	}
-	
+
 	if (OS_IOS) {
-		
+
 	} else {
 		$.win.applyProperties( $.createStyle({ classes: args.classes }) );
 		args.classes = null;
 	}
-	
+
 	var config = args.config;
 	if (config) {
 		var module;
@@ -98,7 +99,7 @@ function init() {
 		}
 		args.config = null;
 	}
-	
+
 	var events = args.events;
 	if (events) {
 		for (var ev in events) {
@@ -106,7 +107,7 @@ function init() {
 		}
 		args.events = null;
 	}
-	
+
 	Alloy.Globals.UI.Home = {
 		isLeftOpen: isLeftOpen,
 		toggleLeft: toggleLeft,
@@ -114,11 +115,11 @@ function init() {
 		setCenter: setCenter,
 		updateNav: updateNav
 	};
-	
+
 	setCenter(args, false);
 	args.url = null;
 	args.data = null;
-	
+
 	setLeft();
 }
 
@@ -135,7 +136,7 @@ exports.reload = function(e) {
 exports.unload = function(e) {
 	unloadLeft(e);
 	unloadCenter(e);
-	
+
 	// comment this to prevent undefined call
 	// Alloy.Globals.UI.Home = null;
 };
@@ -169,7 +170,7 @@ exports.doHide = function(params, win) {
 	}
 };
 
-exports.androidback = function() {
+exports.androidback = function(e) {
     if ( $.drawer.getIsLeftDrawerOpen() ) {
     	$.drawer.closeLeftWindow();
     	return false;
@@ -182,7 +183,7 @@ exports.androidback = function() {
 
 function setLeft() {
 	var menu = Alloy.createController('home/menu');
-	
+
 	Alloy.Globals.UI.Menu = {
 		load: menu.load || function(force){},
 		unload: menu.unload || function(){},
@@ -194,7 +195,7 @@ function setLeft() {
 			Ti.API.error('Home: [Alloy.Globals.UI.Menu.toggle] is removed.\nPlease use [events] params instead.');
 		}
 	};
-	
+
 	if (OS_IOS) {
 		var left = $.UI.create('Window', { classes: args.classes });
 			left.add( menu.getView() );
@@ -204,11 +205,11 @@ function setLeft() {
 	}
 }
 
-var isLeftLoaded = false; 
+var isLeftLoaded = false;
 
 function toggleLeft() {
 	$.drawer.toggleLeftWindow();
-	
+
 	// lazy load left window
 	if (!isLeftLoaded) {
 		isLeftLoaded = true;
@@ -220,7 +221,7 @@ function toggleLeft() {
 
 function unloadLeft(e) {
 	Alloy.Globals.UI.Menu.unload();
-	
+
 	// comment this to prevent undefined call
   	// Alloy.Globals.UI.Menu = null;
 }
@@ -253,7 +254,7 @@ function unloadCenter(e) {
   	if (controller) {
 		controller._alreadyCleanup !== true && controller.cleanup && controller.cleanup();
 		controller.unload && controller.unload();
-		// controller = null; // TODO: this cause conflict with Win Manager - winDestroy, controller.getView() is null 
+		// controller = null; // TODO: this cause conflict with Win Manager - winDestroy, controller.getView() is null
 	}
 }
 
@@ -275,21 +276,23 @@ function setCenter(params, hideDrawer, closeOtherWindows) {
 			toggleLeft();
 		}
 	}
-	
+
 	// if (currentUrl == params.url) { return; }
 	// currentUrl = params.url;
-	
+
 	unloadCenter();
 
 	Ti.API.info('Home: setCenter ' + JSON.stringify( params ));
-	
+
 	if (params.params) {
 		Ti.API.error('Home: [params] parameter is deprecated.\nPlease use [data] parameter instead.');
 		params.data = params.params;
 	}
-	
+
+	if (params.data.isHomePage == null) { params.data.isHomePage = true; }
+
 	controller = Alloy.createController(params.url, params.data);
-	
+
 	if (OS_IOS) {
 		var win = $.UI.create('Window', { classes: args.classes });
 		win.addEventListener('open', centerReady);
@@ -301,7 +304,7 @@ function setCenter(params, hideDrawer, closeOtherWindows) {
 		center.addEventListener('postlayout', centerReady);
 		$.drawer.setCenterView(center);
 	}
-	
+
   	// cleanup children windows
   	if (closeOtherWindows) {
   		var cache = Alloy.Globals.WinManager.getCache();
@@ -336,6 +339,6 @@ function updateNav(nav, iosAddMenuButton, androidResetMenuItems, G) {
 			nav.rightNavButtons = [];
 		}
 	}
-	
+
 	return require('managers/nav').load(getView(), nav, G || $);
 }
