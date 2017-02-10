@@ -8,7 +8,7 @@
 		for action bar's background color
 		do not change this name!
 		-->
-	<color name="primary">#082e3d</color>
+	<color name="primary">#fff</color>
 	<color name="colorPrimaryDark">#082e3d</color>
 	<color name="hintTextColor">#91082e3d</color>
 	<color name="textColorPrimary">#ffffff</color>
@@ -27,6 +27,7 @@
 	<!-- <string name="actionBarSubtitleFont">Lato-BlackItalic</string> -->
 	<dimen name="actionBarSubtitleFontSize">14dp</dimen>
 	<string name="actionBarBackgroundGradientAngle">0</string>
+	<color name="actionBarBackgroundColor">#082e3d</color>
 	<color name="actionBarBackgroundGradientStartColor">#082e3d</color>
     <color name="actionBarBackgroundGradientEndColor">#00425c</color>
 

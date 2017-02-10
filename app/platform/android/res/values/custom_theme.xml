@@ -64,7 +64,11 @@
 	</style>
 	<style name="ActionBarStyleDark" parent="@style/Widget.AppCompat.Light.ActionBar">
         <item name="elevation">0dp</item>
+        <!-- action-bar with color background -->
+        <item name="background">@color/actionBarBackgroundColor</item>
+        <!-- action-bar with gradient background
         <item name="background">@drawable/custom_gradient</item>
+        -->
 	    <item name="titleTextStyle">@style/TitleTextStyleDark</item>
 	    <item name="subtitleTextStyle">@style/SubtitleTextStyleDark</item>
 	</style>
