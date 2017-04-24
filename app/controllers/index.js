@@ -1,7 +1,6 @@
 init();
 function init() {
 	Ti.UI.setBackgroundColor('#fff');
-	OS_IOS && Ti.UI.setTintColor('#f00');
 
 	//
 
