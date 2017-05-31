@@ -289,6 +289,7 @@ function setCenter(params, hideDrawer, closeOtherWindows) {
 		params.data = params.params;
 	}
 
+	if (params.data == null) { params.data = {}; }
 	if (params.data.isHomePage == null) { params.data.isHomePage = true; }
 
 	controller = Alloy.createController(params.url, params.data);
