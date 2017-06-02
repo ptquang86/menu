@@ -11,6 +11,8 @@ WARNING: NAVIGATION BAR MAY COVER THE WINDOW CONTENT IF
 
 /*
  Changes log:
+ - 02/06/2017
+ 	+ add Alloy.Globals.UI.Home.toggleMenuButton
  - 15/08/16
  	+ Lazy load Left Window
  	+ Deprecate [Alloy.Globals.UI.Menu.reload]
@@ -113,7 +115,8 @@ function init() {
 		toggleLeft: toggleLeft,
 		getView: getView,
 		setCenter: setCenter,
-		updateNav: updateNav
+		updateNav: updateNav,
+		toggleMenuButton: toggleMenuButton
 	};
 
 	setCenter(args, false);
@@ -342,4 +345,12 @@ function updateNav(nav, iosAddMenuButton, androidResetMenuItems, G) {
 	}
 
 	return require('managers/nav').load(getView(), nav, G || $);
+}
+
+function toggleMenuButton(visible) {
+	if (OS_IOS) {
+
+	} else {
+		$.drawer.setDrawerIndicatorEnabled(visible);
+	}
 }
