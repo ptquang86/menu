@@ -11,6 +11,8 @@ WARNING: NAVIGATION BAR MAY COVER THE WINDOW CONTENT IF
 
 /*
  Changes log:
+ - 18/08/2017
+ 	+ add custom function fireControllerEvent
  - 02/06/2017
  	+ add Alloy.Globals.UI.Home.toggleMenuButton
  - 15/08/16
@@ -134,6 +136,12 @@ exports.cleanup = function(e) {
 
 exports.reload = function(e) {
 	return reloadCenter(e);
+};
+
+exports.fireControllerEvent = function(nameFunc, params) {
+    if (controller && controller[nameFunc]) {
+        return controller[nameFunc](params);
+    }
 };
 
 exports.unload = function(e) {
