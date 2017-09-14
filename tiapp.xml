@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>ptquang86.menu</id>
+    <id>menu</id>
     <name>menu</name>
     <version>1.0</version>
     <publisher>qdt</publisher>
@@ -53,7 +53,6 @@
     </mobileweb>
     <modules>
         <module platform="iphone">dk.napp.drawer</module>
-        <module platform="android">com.tripvi.drawerlayout</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -62,7 +61,7 @@
         <target device="mobileweb">false</target>
         <target device="windows">false</target>
     </deployment-targets>
-    <sdk-version>6.0.0.GA</sdk-version>
+    <sdk-version>6.2.0.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

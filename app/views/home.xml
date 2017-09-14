@@ -1,7 +1,7 @@
 <Alloy>
 	<Drawer id="drawer" module="dk.napp.drawer" platform="ios"/>
 	<Window id="win" platform="android">
-		<ActionBar title=" " logo="/images/blank.png" onHomeIconItemSelected="toggleLeft"/>
-		<Drawer id="drawer" module="com.tripvi.drawerlayout"/>
+		<ActionBar displayHomeAsUp="true" logo="/images/blank.png" onHomeIconItemSelected="toggleLeft"/>
+		<DrawerLayout id="drawer"/>
 	</Window>
 </Alloy>

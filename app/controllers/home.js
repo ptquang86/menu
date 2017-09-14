@@ -1,6 +1,5 @@
-/* Download these modules:
+/* Download this module:
  	- iOS: https://github.com/viezel/NappDrawer
- 	- Android: https://github.com/manumaticx/Ti.DrawerLayout
 * */
 
 /*
@@ -11,6 +10,10 @@ WARNING: NAVIGATION BAR MAY COVER THE WINDOW CONTENT IF
 
 /*
  Changes log:
+ - 14/09/2017
+    + Remove Ti.DrawerLayout module - https://github.com/manumaticx/Ti.DrawerLayout
+	+ Use [Titanium.UI.Android.DrawerLayout] to replace [Ti.DrawerLayout] module
+	+ Required Titanium SDK 6.2.0
  - 18/08/2017
  	+ add custom function fireControllerEvent
  - 02/06/2017
@@ -42,8 +45,37 @@ WARNING: NAVIGATION BAR MAY COVER THE WINDOW CONTENT IF
  	url: 'window url',
  	data: {},
  	classes: 'win nav-visible nav-button nav-title',
- 	config: {},
- 	events: {}
+ 	config: OS_IOS ? 
+		// https://github.com/viezel/NappDrawer/tree/master/ios#api-properties
+		{
+			animationMode: 'ANIMATION_SLIDE',
+			animationVelocity: 400,
+			centerHiddenInteractionMode: 'OPEN_CENTER_MODE_FULL',
+			closeDrawerGestureMode: 'CLOSE_MODE_ALL',
+			leftDrawerWidth: 160,
+			openDrawerGestureMode: 'OPEN_MODE_NONE',
+			orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT],
+			rightDrawerWidth: 160,
+			shouldStretchDrawer: true,
+			showShadow: false,
+			statusBarStyle: 'STATUSBAR_WHITE'
+		} : 
+		// https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android.DrawerLayout
+		{
+			drawerIndicatorEnabled: true,
+			drawerLockMode: 'LOCK_MODE_UNDEFINED',
+			leftWidth: 160,
+			rightWidth: 160,
+			toolbarEnabled: true
+		},
+ 	events: OS_IOS ?
+		// https://github.com/viezel/NappDrawer/tree/master/ios#events
+		{
+			windowDidOpen: function(e){},
+			windowDidClose: function(e){}
+		} : 
+		// https://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android.DrawerLayout
+		null
  }
  * */
 var args = arguments[0],
@@ -90,7 +122,7 @@ function init() {
 		if (OS_IOS) {
 			module = require('dk.napp.drawer');
 		} else {
-			module = require('com.tripvi.drawerlayout');
+			module = $.drawer;
 		}
 		for (var prop in config) {
 			var func = 'set' + prop.charAt(0).toUpperCase() + prop.substr(1);
@@ -182,8 +214,8 @@ exports.doHide = function(params, win) {
 };
 
 exports.androidback = function(e) {
-    if ( $.drawer.getIsLeftDrawerOpen() ) {
-    	$.drawer.closeLeftWindow();
+    if ( $.drawer.getIsLeftOpen() ) {
+    	$.drawer.closeLeft();
     	return false;
     } else {
 		return backCenter(e);
@@ -219,7 +251,11 @@ function setLeft() {
 var isLeftLoaded = false;
 
 function toggleLeft() {
-	$.drawer.toggleLeftWindow();
+	if (OS_IOS) {
+		$.drawer.toggleLeftWindow();
+	} else {
+		$.drawer.toggleLeft();
+	}
 
 	// lazy load left window
 	if (!isLeftLoaded) {
@@ -241,7 +277,7 @@ function isLeftOpen() {
 	if (OS_IOS) {
 		return $.drawer.isLeftWindowOpen();
 	} else {
-		return $.drawer.getIsLeftDrawerOpen();
+		return $.drawer.getIsLeftOpen();
 	}
 }
 
@@ -283,7 +319,7 @@ function backCenter(e) {
 
 function setCenter(params, hideDrawer, closeOtherWindows) {
 	if (hideDrawer !== false) {
-		if ( $.drawer[OS_IOS ? 'isLeftWindowOpen' : 'getIsLeftDrawerOpen']() ) {
+		if ( $.drawer[OS_IOS ? 'isLeftWindowOpen' : 'getIsLeftOpen']() ) {
 			toggleLeft();
 		}
 	}

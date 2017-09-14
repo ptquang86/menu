@@ -12,7 +12,7 @@ function init() {
 	Alloy.Globals.WinManager = winManager;
 
     // load UI
-    if (0) {
+    if (1) {
     	winManager.load({
 	    	url: 'home',
 	    	data: {
